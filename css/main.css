@@ -5065,6 +5065,29 @@ button.close {
     text-shadow: none
 }
 
+.language-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+  
+.language-button a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+  
+.language-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 @media screen and (min-width:768px) {
     .carousel-control .glyphicon-chevron-left,
     .carousel-control .glyphicon-chevron-right,

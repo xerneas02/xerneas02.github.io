@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +7,14 @@
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta content="description" name="description">
     <meta name="google" content="notranslate" />
-    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+    <meta content="Mashup templates have been developed by the Orson.io team" name="author">
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
     <title>Minecraft Like</title>
 
-    <link href="./css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -26,6 +25,11 @@
     <!-- Add your content of header -->
     <header>
         <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="../minecraft.html">
+                  <img src="../assets/images/UK.png" alt="Language Flag">
+                </a>
+            </div>
             <div class="container">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -36,8 +40,8 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav ">
-                        <li><a href="./index.html" title="">Projets</a></li>
-                        <li><a href="./profil.html" title="">Profil</a></li>
+                        <li><a href="./index.html" title="">Projects</a></li>
+                        <li><a href="./profil.html" title="">Profile</a></li>
                         <li><a href="./contact.html" title="">Contact</a></li>
                     </ul>
                 </div>
@@ -48,50 +52,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="./assets/images/projet4Banner.png" class="img-responsive" alt="">
+                    <img src="../assets/images/projet4Banner.png" class="img-responsive" alt="">
                     <div class="card-container" style="border: 1px solid lightgray;">
                         <div class="text-center">
                             <h1 class="h2">Minecraft Like</h1>
                         </div>
                         <p>
-                            Pendant le cours de réalité virtuelle à Prepa'ISIMA 2, nous avons appris à utiliser le langage Processing, 
-                            qui est un environnement de programmation graphique permettant de créer des applications interactives et visuelles. 
-                            J'ai donc voulu me lancer dans quelque projet avec ce language l'un de mes projets consistait à développer un jeu s'inspirant du célèbre jeu Minecraft.
-                        </p>
-                        <p> 
-                            Dans ce projet de "Minecraft-like", j'ai implémenté une fonctionnalité qui permet à l'utilisateur d'interagir avec le monde virtuel en plaçant et en détruisant des blocs. 
-                            Cette interaction s'effectue à l'aide d'actions simples telles que le clic de la souris pour placer un bloc à l'emplacement souhaité ou pour détruire un bloc existant. 
-                            Cela donne une dimension immersive au jeu, permettant au joueur de façonner le monde à sa guise en créant ou en modifiant son environnement.
+                            During the virtual reality course at Prepa'ISIMA 2, we learned to use the Processing language,
+                            which is a graphical programming environment for creating interactive and visual applications.
+                            So, I wanted to start a project with this language, and one of my projects was to develop a game inspired by the famous game Minecraft.
                         </p>
                         <p>
-                            Par ailleurs, une partie intéressante de ce projet a été l'optimisation de la performance du jeu. 
-                            Avec une carte infinie et une génération procédurale des "chunks", 
-                            il est primordial de gérer efficacement les ressources pour éviter toute surcharge et garantir une expérience fluide à l'utilisateur.
+                            In this "Minecraft-like" project, I implemented a feature that allows the user to interact with the virtual world by placing and destroying blocks.
+                            This interaction is performed using simple actions such as mouse clicks to place a block at the desired location or to destroy an existing block.
+                            This gives an immersive dimension to the game, allowing the player to shape the world according to their wishes by creating or modifying the environment.
                         </p>
                         <p>
-                            J'ai donc mis en place des techniques d'optimisation, 
-                            notamment en utilisant le chargement et le déchargement dynamique des "chunks" en fonction de leur position par rapport au champ de vision du joueur. 
-                            Les "chunks" situés hors du champ de vision peuvent être déchargés de la mémoire pour économiser des ressources, 
-                            tandis que les nouveaux "chunks" visibles par le joueur sont chargés à la volée.
-                        </p>
-                            En outre, j'ai appliqué des méthodes d'optimisation pour les blocs qui ne sont pas visibles à l'écran. 
-                            Ces blocs ne nécessitent pas d'être rendus graphiquement, donc je les ai exclus du processus de rendu afin de réduire la charge sur le moteur graphique.
-                        <p>
-                            La génération procédurale de la carte utilise des bruits (ou "noises" en anglais), 
-                            qui sont des fonctions mathématiques permettant de générer des valeurs aléatoires cohérentes dans l'espace. 
-                            Cela donne l'illusion d'un terrain naturel et varié, en créant des montagnes, des vallées, des plaines, etc., de manière réaliste.
+                            Furthermore, an interesting part of this project was optimizing the game's performance.
+                            With an infinite map and procedural generation of "chunks," it is essential to efficiently manage resources to avoid overload and ensure a smooth user experience.
                         </p>
                         <p>
-                            J'ai également mis en place la génération des structures, comme les arbres. 
-                            Cela signifie que les arbres sont automatiquement placés à des endroits aléatoires de la carte, 
-                            en suivant certaines règles pour s'assurer qu'ils apparaissent de manière naturelle.
+                            So, I implemented optimization techniques, including dynamic loading and unloading of "chunks" based on their position relative to the player's field of view.
+                            "Chunks" located outside the field of view can be unloaded from memory to save resources, while new "chunks" visible to the player are loaded on the fly.
                         </p>
                         <p>
-                            Ce projet m'a permis de mieux comprendre le développement de moteur 3D, 
-                            la génération procédurale et la manipulation des objets interactifs. 
-                            C'était une expérience enrichissante et passionnante, qui m'a permis d'approfondir mes compétences en développement.
+                            In addition, I applied optimization methods for blocks that are not visible on the screen.
+                            These blocks do not need to be graphically rendered, so I excluded them from the rendering process to reduce the load on the graphics engine.
                         </p>
-                        <h3 class="template-title-example">Notions utilisées</h3>
+                        <p>
+                            The procedural generation of the map uses noises, which are mathematical functions that generate coherent random values in space.
+                            This creates the illusion of a natural and varied terrain, creating mountains, valleys, plains, etc., in a realistic way.
+                        </p>
+                        <p>
+                            I also implemented the generation of structures, such as trees.
+                            This means that trees are automatically placed in random locations on the map, following certain rules to ensure they appear naturally.
+                        </p>
+                        <p>
+                            This project allowed me to better understand 3D engine development, procedural generation, and manipulation of interactive objects.
+                            It was an enriching and exciting experience that allowed me to deepen my development skills.
+                        </p>
+                        <h3 class="template-title-example">Concepts Used</h3>
                         <ul>
                             <li>
                                 <span class="fa-icon">
@@ -99,7 +99,8 @@
                   </span>Processing
                             </li>
                         </ul>
-                        <h3 class="template-title-example">Liens externes</h3>
+                        <h3 class="template-title-example">External Links</h3>
+                        <ul>
                             <li>
                                 <a href="https://github.com/xerneas02/MinecraftLikeProcessing/tree/main" target="blank_">
                                     <span class="fa-icon">
@@ -108,10 +109,10 @@
                                 </a>
                             </li>
                         </ul>
-                        <h3>Quelques images du jeu :</h3>
-                        <img src="./assets/images/MinecraftLike3.png" class="img-responsive" alt=""><br>
-                        <img src="./assets/images/MinecraftLike1.png" class="img-responsive" alt=""><br>
-                        <img src="./assets/images/MinecraftLike2.png" class="img-responsive" alt="">
+                        <h3>Some images of the game:</h3>
+                        <img src="../assets/images/MinecraftLike3.png" class="img-responsive" alt=""><br>
+                        <img src="../assets/images/MinecraftLike1.png" class="img-responsive" alt=""><br>
+                        <img src="../assets/images/MinecraftLike2.png" class="img-responsive" alt="">
                     </div>
                 </div>
             </div>
@@ -123,7 +124,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Mis à jour le 24/07/2023</p>
+                    <p>Last updated on 24/07/2023</p>
                 </div>
             </div>
         </div>
@@ -134,7 +135,7 @@
             navActivePage();
         });
     </script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 
 </html>

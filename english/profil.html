@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +7,14 @@
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta content="description" name="description">
     <meta name="google" content="notranslate" />
-    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+    <meta content="Mashup templates have been developed by the Orson.io team" name="author">
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-    <title>Profil</title>
+    <title>Profile</title>
 
-    <link href="./css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -26,6 +25,11 @@
     <!-- Add your content of header -->
     <header>
         <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="../profil.html">
+                  <img src="../assets/images/UK.png" alt="Language Flag">
+                </a>
+            </div>
             <div class="container">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -36,8 +40,8 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav ">
-                        <li><a href="./index.html" title="">Projets</a></li>
-                        <li><a href="./profil.html" title="">Profil</a></li>
+                        <li><a href="./index.html" title="">Projects</a></li>
+                        <li><a href="./profil.html" title="">Profile</a></li>
                         <li><a href="./contact.html" title="">Contact</a></li>
                     </ul>
                 </div>
@@ -50,25 +54,23 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-container-spacer text-center">
-                        <h1 class="h2">Mon profil</h1>
+                        <h1 class="h2">My Profile</h1>
                     </div>
 
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            <img src="./assets/images/profil.png" class="img-responsive" alt="" style="border: 1px solid lightgray; width: 35%; float: right; margin-left: 2%;">
-                            <h3>Présentation</h3>
+                            <img src="../assets/images/profil.png" class="img-responsive" alt="" style="border: 1px solid lightgray; width: 35%; float: right; margin-left: 2%;">
+                            <h3>Presentation</h3>
                             <p id="presentation"></p>
-                            <h3>Parcours</h3>
+                            <h3>Background</h3>
                             <p>
-                                Ma première approche de l'informatique s'est faite au collège avec le logiciel <a href="https://scratch.mit.edu" target="blank_" style="font-style: italic;">Scratch</a> (<a href="https://scratch.mit.edu/users/xerneas02/" target="blank_" style="font-style: italic;">Mon profil</a>) qui m'a fait découvrir les bases de la programmation
-                                et écrire mes premiers algorithmes. J'ai ensuite continué à découvrir la programmation avec mes premiers codes en python.
+                                My first encounter with computers was during middle school when I started using <a href="https://scratch.mit.edu" target="blank_" style="font-style: italic;">Scratch</a> (<a href="https://scratch.mit.edu/users/xerneas02/" target="blank_" style="font-style: italic;">My profile</a>), which introduced me to the basics of programming and writing my first algorithms. Later on, I continued exploring programming with my first codes in Python.
                             </p>
                             <p>
-                                J'ai réellement commencé la programmation au Lycée d'abord seul puis par la specialité <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="blank_" style="font-style: italic;">Informatique et Science du Numérique (ISN)</a> ou j'ai put faire mes premiers projets.
+                                I truly began my programming journey in high school, initially on my own, and then through the specialization in <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="blank_" style="font-style: italic;">Computer Science and Digital Technologies (CSDT)</a>, where I worked on my first projects.
                             </p>
                             <p>
-                                Après l'obtention d'un baccalauréat scientifique avec enseignement de spécialité <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="blank_" style="font-style: italic;">ISN</a>,
-                                j'ai poursuivi mon parcours en m'orientant vers l'école préparatoire intégrée Prep'ISIMA.
+                                After completing my high school education with a specialization in <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="blank_" style="font-style: italic;">CSDT</a>, I continued my academic journey by enrolling in the integrated preparatory school, Prep'ISIMA and after validating my 2 years of Prep'ISIMA I integrated <a href="https://www.isima.fr" target="blanck_" style="font-style: italic;">ISIMA</a>.
                             </p>
                         </div>
                     </div>
@@ -82,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Mis à jour le 24/07/2023</p>
+                    <p>Last updated on 24/07/2023</p>
                 </div>
             </div>
         </div>
@@ -97,9 +99,9 @@
         var age_dt = new Date(month_diff);
         var age = Math.abs(age_dt.getUTCFullYear() - 1970);
 
-        document.getElementById("presentation").innerHTML = `Je m'appelle Mathis Roubille, j'ai ${age} ans et je suis étudiant à ISIMA en deuxième année.`
+        document.getElementById("presentation").innerHTML = `My name is Mathis Roubille, I am ${age} years old, and I am a second-year student at ISIMA.`
     </script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 
 </html>
