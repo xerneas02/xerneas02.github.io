@@ -13,7 +13,8 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-    <title>Minecraft Mod</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <title>Journée d'intégration</title>
 
     <link href="./css/main.css" rel="stylesheet">
 </head>
@@ -48,50 +49,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="./assets/images/projet7Banner.png" class="img-responsive" alt="">
+                    <img src="./assets/images/projet1Banner.jpg" class="img-responsive" alt="">
                     <div class="card-container" style="border: 1px solid lightgray;">
                         <div class="text-center">
-                            <h1 class="h2">Minecraft Mod Ornithorynque</h1>
+                            <h1 class="h2">Projet permettant de créer facilement des cartes Pokémon en réalité augmentée.</h1>
                         </div>
-                        <p>
-                            Ce projet m'a été inspiré par le désir d'approfondir mes connaissances sur le fonctionnement du code de Minecraft et d'explorer davantage le domaine des mods.
-                            J'avais déjà créé quelques petits mods par le passé, mais ils se limitaient à quelques blocs.
-                            Cette fois-ci, j'ai décidé d'experimenté avec l'ajout d'entité au jeu. 
-                            Mon choix s'est porté sur mon animal favori, l'ornithorynque, pour donner une touche originale et personnelle à mon projet.
-                        </p>
-                        <p> 
-                            Pour ce faire j'ai utilisé le logiciel Blockbench pour modéliser mon ornithorynque et créer diverses animations pour lui. 
-                            J'ai également ajouté une source de nourriture pour l'ornithorynque en créant un escargot, avec ses propres animations.
-                            Pour concevoir le comportement de l'ornithorynque, je me suis inspiré du comportement de l'axolote, en y ajoutant la possibilité de se reproduire avec des escargots et de pondre des œufs, tout comme les poules.
-                            L'ornithorynque peut être récupéré en effectuant un saut, comme d'autres mobs aquatiques dans Minecraft. 
-                            Bien que le mod soit encore en développement, j'ai pour objectif de le rendre adoptable (même si je pense que si Mojang l'ajoutait officiellement, il ne pourrait pas l'être) et qu'il puisse fouiller au fond de l'eau à la manière d'un "Sniffer", 
-                            étant donné que les ornithorynques cherchent leur proie au fond de l'eau de cette façon.
-                        </p>
-                        <p>
-                            Cette création de mod a été une expérience fascinante, me permettant de mieux comprendre ce jeu que j'adore. Cela m'a également donné l'occasion d'explorer de nouvelles fonctionnalités et de créer un ajout original avec mon animal préféré, 
-                            l'ornithorynque, dans l'univers de Minecraft. 
-                            Je suis impatient de continuer à développer ce mod et de partager cette expérience unique avec la communauté des joueurs Minecraft.
+                        <p>Ce projet a été réalisé en Processing, un langage basé sur Java, qui nous a été présenté lors du cours de réalité virtuelle. Suite à ce cours, j'ai réalisé plusieurs projets avec ce langage.</p>
+                        <p>Le but de ce projet était de créer des cartes Pokémon en réalité augmentée tout en permettant d'ajouter facilement de nouvelles cartes. 
+                           Pour cela, j'ai souhaité éviter d'avoir à modifier le code existant chaque fois qu'une nouvelle carte doit être ajoutée. 
+                           Il suffit désormais de créer un dossier spécifique contenant toutes les informations nécessaires pour intégrer une nouvelle carte.
                         </p>
                         <h3 class="template-title-example">Notions utilisées</h3>
                         <ul>
                             <li>
                                 <span class="fa-icon">
                     <i class="fa fa-code"></i>
-                  </span>Java
+                  </span>Processing
                             </li>
                         </ul>
                         <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
                             <li>
-                                <a href="https://github.com/xerneas02/ornithorynque_mod/tree/main" target="blank_">
+                                <a href="https://github.com/xerneas02/PokemonCardAR" target="blank_">
                                     <span class="fa-icon">
                       <i class="fa fa-github"></i>
                     </span>GitHub
                                 </a>
                             </li>
                         </ul>
-                        <h3>Quelques images du jeu :</h3>
-                        <img src="./assets/images/ornithorynque.png" class="img-responsive" alt=""><br>
-                        <img src="./assets/images/ornithorynque2.png" class="img-responsive" alt="">
+                        <h3 class="template-title-example">Video de presentation du projet.</h3>
+                        <div id="player"></div>
+                        <h3 class="template-title-example">Présentation de la gestion de particules en temps réel.</h3>
+                        <img src="./assets/images/charmeleon.gif" class="img-responsive" alt="">
+                        <br>
+                        <img src="./assets/images/flame1.gif" class="img-responsive" alt="">
                     </div>
                 </div>
             </div>
@@ -115,6 +106,23 @@
         });
     </script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script>
+        // Fonction appelée lorsque l'API YouTube est prête
+        function onYouTubeIframeAPIReady() {
+            // Crée un nouvel objet player
+            var player = new YT.Player('player', {
+                height: '315', // Hauteur de la vidéo
+                width: '560',  // Largeur de la vidéo
+                videoId: 'E9LXZgkXa18', // Remplacez par le code d'intégration de votre vidéo YouTube
+                playerVars: {
+                    // Ajoutez des paramètres supplémentaires ici si nécessaire
+                },
+                events: {
+                    // Gérez les événements liés au lecteur ici si nécessaire
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
