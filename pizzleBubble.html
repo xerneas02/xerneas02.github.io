@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <title>Pizzle Bubble</title>
+
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Add your content of header -->
+    <header>
+        <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="./index.html" title="">Projets</a></li>
+                        <li><a href="./profil.html" title="">Profil</a></li>
+                        <li><a href="./contact.html" title="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="./assets/images/projet5Banner.png" class="img-responsive" alt="">
+                    <div class="card-container" style="border: 1px solid lightgray;">
+                        <div class="text-center">
+                            <h1 class="h2">Pizzle Bubble</h1>
+                        </div>
+                        <p>Projet de Prepa'ISIMA 2. Un jeu basé sur le principe du jeu Puzzle bubble.</p>
+                        <p>Ce projet a été réalisé en groupe avec deux autre personne Thomas Tamagnaud et Reynalde Segerie dans le cadre du projet de fin d'année de Prepa'ISIMA 2.</p>
+                        <p>
+                            Notre gérant de projet, Lucas Pastor, nous a proposé de créer un jeu de bubble shooter. 
+                            Pour le nom du jeu, nous avons choisi "Pizzle Bubble" en référence à nos chers étudiants de Prepa'ISIMA, surnommés affectueusement PIZZ et en reference au jeu puzzle bubble. 
+                            Ce jeu est accessible à un à trois joueurs, et même des bots peuvent participer. 
+                            Le but est de résoudre des puzzles en faisant éclater des bulles de couleurs en les combinant astucieusement.   
+                        </p>
+                        <h3 class="template-title-example">Notions utilisées</h3>
+                        <ul>
+                            <li>
+                                <span class="fa-icon">
+                    <i class="fa fa-code"></i>
+                  </span>Python
+                            </li>
+                        </ul>
+                        <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://gitlab.isima.fr/resegerie/projet-pizzle-bobble" target="blank_">
+                                    <span class="fa-icon">
+                      <i class="fa fa-gitlab"></i>
+                    </span>GitLab
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./assets/pdf/PizzleBubble.pdf" target="blank_">
+                                    <span class="fa-icon">
+                      <i class="fa fa-file-powerpoint-o"></i>
+                    </span>Diaporama de presentation.
+                                </a>
+                            </li>
+                        </ul>
+                        <h3 class="template-title-example">Vidéo de présentation du personnage "Lucky" (personnage inspiré par notre gérant de projet).</h3>
+                        <div id="player"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Mis à jour le 24/07/2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script>
+        // Fonction appelée lorsque l'API YouTube est prête
+        function onYouTubeIframeAPIReady() {
+            // Crée un nouvel objet player
+            var player = new YT.Player('player', {
+                height: '315', // Hauteur de la vidéo
+                width: '560',  // Largeur de la vidéo
+                videoId: 'HXEia38n9DQ', // Remplacez par le code d'intégration de votre vidéo YouTube
+                playerVars: {
+                    // Ajoutez des paramètres supplémentaires ici si nécessaire
+                },
+                events: {
+                    // Gérez les événements liés au lecteur ici si nécessaire
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

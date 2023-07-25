@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <title>Journée d'intégration</title>
+
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Add your content of header -->
+    <header>
+        <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="./index.html" title="">Projets</a></li>
+                        <li><a href="./profil.html" title="">Profil</a></li>
+                        <li><a href="./contact.html" title="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="./assets/images/projet1Banner.jpg" class="img-responsive" alt="">
+                    <div class="card-container" style="border: 1px solid lightgray;">
+                        <div class="text-center">
+                            <h1 class="h2">Projet permettant de créer facilement des cartes Pokémon en réalité augmentée.</h1>
+                        </div>
+                        <p>Ce projet a été réalisé en Processing, un langage basé sur Java, qui nous a été présenté lors du cours de réalité virtuelle. Suite à ce cours, j'ai réalisé plusieurs projets avec ce langage.</p>
+                        <p>Le but de ce projet était de créer des cartes Pokémon en réalité augmentée tout en permettant d'ajouter facilement de nouvelles cartes. 
+                           Pour cela, j'ai souhaité éviter d'avoir à modifier le code existant chaque fois qu'une nouvelle carte doit être ajoutée. 
+                           Il suffit désormais de créer un dossier spécifique contenant toutes les informations nécessaires pour intégrer une nouvelle carte.
+                        </p>
+                        <h3 class="template-title-example">Notions utilisées</h3>
+                        <ul>
+                            <li>
+                                <span class="fa-icon">
+                    <i class="fa fa-code"></i>
+                  </span>Processing
+                            </li>
+                        </ul>
+                        <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/xerneas02/PokemonCardAR" target="blank_">
+                                    <span class="fa-icon">
+                      <i class="fa fa-github"></i>
+                    </span>GitHub
+                                </a>
+                            </li>
+                        </ul>
+                        <h3 class="template-title-example">Video de presentation du projet.</h3>
+                        <div id="player"></div>
+                        <h3 class="template-title-example">Présentation de la gestion de particules en temps réel.</h3>
+                        <img src="./assets/images/charmeleon.gif" class="img-responsive" alt="">
+                        <br>
+                        <img src="./assets/images/flame1.gif" class="img-responsive" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Mis à jour le 24/07/2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script>
+        // Fonction appelée lorsque l'API YouTube est prête
+        function onYouTubeIframeAPIReady() {
+            // Crée un nouvel objet player
+            var player = new YT.Player('player', {
+                height: '315', // Hauteur de la vidéo
+                width: '560',  // Largeur de la vidéo
+                videoId: 'E9LXZgkXa18', // Remplacez par le code d'intégration de votre vidéo YouTube
+                playerVars: {
+                    // Ajoutez des paramètres supplémentaires ici si nécessaire
+                },
+                events: {
+                    // Gérez les événements liés au lecteur ici si nécessaire
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>Soutenance 2 groupe 8</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#mode').addEventListener('click',()=>{
+                document.querySelector('html').classList.toggle('dark');
+            })
+        });
+
+
+    </script>
+
+    <div id="wrapper">
+
+        <div id="mode" >
+            <div class="dark">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>lightmode</title>
+                    <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                </svg>
+            </div>
+            <div class="light">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>darkmode</title>
+                    <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Soutenance 2 groupe 8</h1>
+                            <p class="lead">BOISSET Florian, ROUBILLE Mathis et THOUMIN Maxime</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="index.html"><b>Introduction</b></a></li>
+                            <li><a href="semaine1.html"><b>Semaine 1</b></a></li>
+                            <li><a href="semaine2.html"><b>Semaine 2</b></a></li>      
+                            <li><a href="#line1">Lundi</a></li>
+                            <li><a href="#line2">Mardi</a></li>
+                            <li><a href="#line3">Mercredi</a></li>
+                            <li><a href="#line4">Jeudi</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                               <h2 class="dark-text">Introduction<hr></h2>
+                                <div class="row">
+                                    <div class="col-md-12">
+    
+                                        <h2>1er juillet 2023 - 7 juillet 2023</h2>
+                                        <h2>Objectifs :</h2>
+                                        <p>- Jeu vidéo.</p>
+                                        <p>- Intelligence Artificielle.</p>
+            
+                                        </div>
+                                        <!-- end col -->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="line1" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Lundi<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h4>- Reprise de la base du jeu de la semaine 1</h4>
+
+                                <img src="images/semaine2/ancien-jeu.gif"/>
+
+                                <h4>- Modification de la génération du terrain.</h4>
+
+                                <h4>- Modification de la gestion des collisions avec les astéroïdes.</h4>
+                                <p>Utilisation du projeté orthogonal.</p>
+                                <img src="images/semaine2/projete-orthogonal.png"/>
+
+                                <h4>- Ajout de deux trous noirs et de leur attraction.</h4>
+                                <p>Déplacements aléatoires.</p>
+                                <p>Quand la distance joueur-trou noir diminue, l'attraction augmente.</p>
+
+                                <img src="images/semaine2/Jeu-joueur.gif"/>
+
+
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line2" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Mardi<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>- Début IA</h4>
+                        <p>Mise en place du système de règles :</p>
+                        <p>o Entrées :</p>
+                        <p>[ Direction de la planète la plus proche, -> NO, NE, SE, SO, -1</p>
+                        <p>Direction du mur le plus proche, -> NO, NE, SE, SO, 0, -1</p>
+                        <p>Est-ce qu’il y a un mur entre le joueur et la planète ?, -> Oui, Non, -1</p>
+                        <p>Direction du trou noir le plus proche, -> NO, NE, SE, SO, -1</p>
+                        <p>Distance du trou noir le plus proche ] -> Proche, Moyen, Loin, -1</p>
+                        <img src="images/semaine2/4-directions.png "/>
+
+                        <p>o Sorties :</p>
+                        <p>[ Direction verticale, -> N, 0, S, -1</p>
+                        <p>Direction horizontale ]-> O, 0, E, -1</p>
+
+                        <p></p>
+
+                        <p>o Priorité :</p>
+                        <p>De 1 à 6</p>
+
+                        <p></p>
+
+                        <p>Algorithme de recherche locale :</p>
+                        <img src="images/semaine2/algo-recherche-locale.png "/>
+
+                        <h4>- Optimisation du moteur de jeu</h4>
+                        <p>o Problème :</p>
+                        <p>Exécution plutôt lente qui ralentit l'entraînement de l'IA.</p>
+
+                        <p></p>
+
+                        <p>o Solution :</p>
+                        <p>Optimisation de la fonction de gestion des collisions.</p>
+                        <p>Réduction du nombre d'appels de la fonction de gestion des collisions.</p>
+                        
+                        <p></p>
+
+                        <h4>- Switch pour la partie graphique</h4>
+                        <p>Pour exécuter le programme plus rapidement et entraîner l'IA plus efficacement</p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line3" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Mercredi<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>- Résolution du bug du multi-threading</h4>
+                        <p>o Problème :</p>
+                        <p>Beaucoup d'appels de la fonction rand().</p>
+                        <p>Or, rand() fait appel à une variable globale et la modifie.</p>
+                        <p>Donc les threads devaient attendre que les autres aient terminé d'utiliser la variable globale.</p>
+
+                        <p></p>
+
+                        <p>o Solution :</p>
+                        <p>Création d'un tableau d'entiers choisis aléatoirement.</p>
+                        <p>Les threads ont juste à lire dans le tableau, pas d'incrémentation de la variable.</p>
+
+                        <p></p>
+
+                        <h4>- Algorithme génétique</h4>
+                        <img src="images/semaine2/genetique1.png "/>
+                        <img src="images/semaine2/genetique2.png "/>
+                        <img src="images/semaine2/genetique3.png "/>
+                        <img src="images/semaine2/genetique4.png "/>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line4" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Jeudi<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>- Résolution des problèmes de l'IA</h4>
+
+                        <h4>- Simulations</h4>
+
+                    </section>
+                    <!-- end section -->
+
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+</body>
+
+</html>
