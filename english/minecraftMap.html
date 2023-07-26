@@ -120,7 +120,9 @@
                             </li>
                         </ul>
                         <h3 class="template-title-example">Map Trailer</h3>
-                        <div id="player"></div>
+                        <div id="player">
+                            <iframe id="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/pnwAGucoYUs" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,21 +147,27 @@
     </script>
     <script type="text/javascript" src="../js/main.js"></script>
     <script>
-        // Function called when the YouTube API is ready
-        function onYouTubeIframeAPIReady() {
-            // Create a new player object
-            var player = new YT.Player('player', {
-                height: '315', // Height of the video
-                width: '560', // Width of the video
-                videoId: 'pnwAGucoYUs', // Replace with the YouTube video's embed code
-                playerVars: {
-                    // Add additional parameters here if necessary
-                },
-                events: {
-                    // Handle player-related events here if necessary
-                }
-            });
+        // Variables pour stocker les dimensions de la vidéo
+        var videoWidth = 560; // Largeur de la vidéo
+        var videoHeight = 315; // Hauteur de la vidéo
+
+        // Fonction pour ajuster les dimensions de la vidéo en fonction de la taille de l'écran
+        function adjustVideoSize() {
+            var container = document.getElementById('player');
+            var containerWidth = container.offsetWidth;
+            var newHeight = (containerWidth / videoWidth) * videoHeight;
+            container.style.height = newHeight + 'px';
         }
+
+        // Fonction appelée lorsque l'API YouTube est prête
+        function onYouTubeIframeAPIReady() {
+            // Ajuster la taille de la vidéo lorsqu'elle est prête
+            adjustVideoSize();
+        }
+
+        window.addEventListener('resize', function() {
+            adjustVideoSize();
+        });
     </script>
 </body>
 
