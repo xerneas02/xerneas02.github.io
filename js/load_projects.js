@@ -3,11 +3,11 @@ const projects = [
 // #################### FRENCH ####################
 
     {
-        "date": "2024-02-01",
-        "title": "Rocket League Bot",
-        "description": "Projet de deuxième année à l'ISIMA, devlopper un agent en machine learning capable de jouer à Rocket League.",
-        "image": "./assets/images/RocketBot.jpg",
-        "link": "./rocketLeague.html",
+        "date": "2025-03-25",
+        "title": "IA Pokémon Rouge",
+        "description": "Projet de troisième année à l'ISIMA, développer une intelligence artificielle capable de jouer à Pokémon Rouge.",
+        "image": "./assets/images/projet9.png",
+        "link": "./pokemonRedAi.html",
         "language": "fr"
     },
     {
@@ -58,14 +58,6 @@ const projects = [
         "link": "./minecraft.html",
         "language": "fr"
     },
-    /*{
-        "date": "2023-07-01",
-        "title": "Minecraft mod Ornithorynque",
-        "description": "Mod minecraft ajoutant des ornithorynque.",
-        "image": "./assets/images/projet7.png",
-        "link": "./minecraftMod.html",
-        "language": "fr"
-    },*/
     {
         "date": "2022-07-01",
         "title": "Minecraft map War Industrie",
@@ -82,9 +74,31 @@ const projects = [
         "link": "./chatBot.html",
         "language": "fr"
     },
-
+    {
+        "date": "2023-07-01",
+        "title": "Minecraft mod Ornithorynque",
+        "description": "Mod minecraft ajoutant des ornithorynque.",
+        "image": "./assets/images/projet7.png",
+        "link": "./minecraftMod.html",
+        "language": "fr"
+    },
+    {
+        "date": "2024-02-01",
+        "title": "Rocket League Bot",
+        "description": "Projet de deuxième année à l'ISIMA, devlopper un agent en machine learning capable de jouer à Rocket League.",
+        "image": "./assets/images/RocketBot.jpg",
+        "link": "./rocketLeague.html",
+        "language": "fr"
+    },
 // #################### ENGLISH ####################
-
+    {
+        "date": "2025-03-25",
+        "title": "Pokémon Red AI",
+        "description": "Third-year project at ISIMA: develop an AI capable of playing Pokémon Red autonomously.",
+        "image": "../assets/images/projet9.png",
+        "link": "./english/pokemonRedAi.html",
+        "language": "en"
+    },
     {
         "date": "2024-02-01",
         "title": "Rocket League Bot",
@@ -141,14 +155,6 @@ const projects = [
         "link": "./minecraft.html",
         "language": "en"
     },
-    /*{
-        "date": "2023-07-01",
-        "title": "Minecraft mod Platypus",
-        "description": "Minecraft mod adding Platypus.",
-        "image": "../assets/images/projet7.png",
-        "link": "./minecraftMod.html",
-        "language": "en"
-    },*/
     {
         "date": "2022-07-01",
         "title": "Minecraft map War Industry",
@@ -163,6 +169,14 @@ const projects = [
         "description": "Internship to develop a chatbot for a study program at UiT in Norway.",
         "image": "../assets/images/chatbot.png",
         "link": "./chatBot.html",
+        "language": "en"
+    },
+    {
+        "date": "2023-07-01",
+        "title": "Minecraft mod Platypus",
+        "description": "Minecraft mod adding Platypus.",
+        "image": "../assets/images/projet7.png",
+        "link": "./minecraftMod.html",
         "language": "en"
     }
 ]

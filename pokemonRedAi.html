@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Développement d'une IA capable de jouer à Pokémon Rouge">
+    <meta name="google" content="notranslate" />
+    <meta name="author" content="Mathis Roubille">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>IA Pokémon Rouge</title>
+
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Add your content of header -->
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="./english/pokemonRedAi.html">
+                  <img src="./assets/images/France.png" alt="Drapeau Langue">
+                </a>
+            </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html">Projets</a></li>
+                        <li><a href="./profil.html">Profil</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="./assets/images/projet9Banner.png" class="img-responsive" alt="">
+                    <div class="card-container" style="border: 1px solid lightgray;">
+                        <div class="text-center">
+                            <h1 class="h2">IA Pokémon Rouge</h1>
+                        </div>
+                        <p>
+                            Durant ma troisième année d'études, j'ai participé à un projet de plus de 150 heures mené en binôme avec Sami Abdul-Salam.
+                        </p>
+                        <p>
+                            Notre objectif était de développer une intelligence artificielle capable de jouer à Pokémon Rouge de manière autonome. Ce défi nous a permis d'explorer les méthodes d'apprentissage par renforcement, la simulation de jeu et l'évolutivité des architectures neuronales.
+                        </p>
+                        <p>
+                            Au cours de cette période intense, nous avons mis en place : la simulation du jeu via un émulateur PyBoy, la configuration de l'environnement IA avec Gym et Stable Baselines, l'entraînement par renforcement et neuroévolution avec NEAT, et l'analyse des résultats pour évaluer les performances.
+                        </p>
+                        <p>
+                            Pour en savoir plus sur notre démarche, nos résultats et nos réflexions, consultez notre rapport de projet détaillé et notre dépôt GitHub.
+                        </p>
+
+                        <h3 class="template-title-example">Notions utilisées</h3>
+                        <ul>
+                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>Python</li>
+                            <li><span class="fa-icon"><i class="fa fa-cogs"></i></span>PyBoy (émulation Game Boy)</li>
+                            <li><span class="fa-icon"><i class="fa fa-cube"></i></span>Gym & Stable Baselines</li>
+                            <li><span class="fa-icon"><i class="fa fa-sitemap"></i></span>NEAT & réseaux convolutionnels (CNN)</li>
+                            <li><span class="fa-icon"><i class="fa fa-brain"></i></span>Apprentissage par renforcement (PPO, DQN, A2C)</li>
+                        </ul>
+
+                        <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/xerneas02/AiPokemonRed" target="blank_">
+                                  <span class="fa-icon"><i class="fa fa-github"></i></span>GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/pdf/PokemonRedAI.pdf" target="blank_">
+                                  <span class="fa-icon"><i class="fa fa-file-pdf-o"></i></span>Rapport de projet
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/pptx/Pokemon_PowerPoint.pptx" download>
+                                    <span class="fa-icon"><i class="fa fa-file-powerpoint-o"></i></span>PowerPoint Presentation
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="template-title-example">Perspectives de progression</h3>
+                        <ul>
+                            <li>Sous-division des tâches de l'IA en modules dédiés : navigation, gestion des combats, analyse mémoire, etc.</li>
+                            <li>Implémentation d'un réseau de neurones modulaire où chaque composant gère une tâche spécifique et communique via des interfaces définies.</li>
+                            <li>Exploration du transfert learning pour réutiliser des modules dans d'autres environnements de jeu.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Mis à jour le 06/05/2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
