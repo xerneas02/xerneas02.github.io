@@ -1,0 +1,1 @@
+This is my portfolio you can see it at [https://xerneas02.github.io/](https://xerneas02.github.io/) or [https://xerneas02.github.io/english/index.html](https://xerneas02.github.io/english/index.html) for the english page.
