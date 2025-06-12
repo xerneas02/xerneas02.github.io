@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BirdCards - Learn to recognize birds with images, sounds, and quizzes">
+    <meta name="author" content="Mathis Roubille">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>BirdCards</title>
+
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+
+    <!-- Header and navigation -->
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="../birdApp.html">
+                    <img src="../assets/images/UK.png" alt="Language Flag">
+                </a>
+            </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html" title="Projects">Projects</a></li>
+                        <li><a href="../profil.html" title="Profile">Profile</a></li>
+                        <li><a href="../contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="../assets/images/birdcardsBanner.jpg" class="img-responsive" alt="BirdCards Banner">
+
+                    <div class="card-container" style="border: 1px solid lightgray; padding: 20px;">
+                        <div class="text-center">
+                            <h1 class="h2">BirdCards</h1>
+                        </div>
+
+                        <p>
+                            BirdCards is an educational application that helps you learn to recognize birds through their names,
+                            images, and songs. Built with Python and Flask for the backend and HTML/CSS/JavaScript for the frontend,
+                            the app features an intuitive, responsive interface that works on both desktop and mobile devices.
+                        </p>
+                        <p>
+                            Key features include:
+                        </p>
+                        <ul>
+                            <li>Displaying bird names in French or English</li>
+                            <li>Viewing images and listening to sounds (Xeno-canto)</li>
+                            <li>No-repetition mode until the list is exhausted</li>
+                            <li>Filters by difficulty level and media type (image, sound)</li>
+                            <li>Light/dark themes and dynamic language switching (FR/EN)</li>
+                        </ul>
+
+                        <h3 class="template-title-example">Technologies Used</h3>
+                        <ul>
+                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>Python (Flask)</li>
+                            <li><span class="fa-icon"><i class="fa fa-html5"></i></span>HTML, CSS, JavaScript</li>
+                            <li><span class="fa-icon"><i class="fa fa-refresh"></i></span>AJAX for dynamic updates</li>
+                        </ul>
+
+                        <h3 class="template-title-example">External Links</h3>
+                        <ul>
+                            <li>
+                                <a href="https://birdcards.onrender.com/?diff=1&diff=2&diff=3&media=image&media=sound&noRep=off" target="_blank">
+                                    <span class="fa-icon"><i class="fa fa-external-link"></i></span>Try the app
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/xerneas02/BirdCards/tree/main" target="_blank">
+                                    <span class="fa-icon"><i class="fa fa-github"></i></span>GitHub
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3>Some screenshots of the app:</h3>
+                        <img src="../assets/images/Guillemot.png" class="img-responsive" alt="Screenshot 1"><br>
+                        <img src="../assets/images/eagle.png" class="img-responsive" alt="Screenshot 2"><br>
+                        <img src="../assets/images/phone.png" class="img-responsive" alt="Screenshot 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Last updated on 06/12/2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+
+</html>

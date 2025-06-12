@@ -37,7 +37,7 @@ const projects = [
     {
         "date": "2021-09-01",
         "title": "Site pour une journée d'intégration",
-        "description": "Création d'un site pour la journée d'intégration des Prép’ISIMA 2021-2023.",
+        "description": "Création d'un site pour la journée d'intégration des Prép'ISIMA 2021-2023.",
         "image": "./assets/images/projet2.jpg",
         "link": "./integration.html",
         "language": "fr"
@@ -90,6 +90,14 @@ const projects = [
         "link": "./rocketLeague.html",
         "language": "fr"
     },
+    {
+        "date": "2025-02-26",
+        "title": "BirdCards",
+        "description": "Application éducative pour apprendre les noms d'oiseaux avec images et sons.",  
+        "image": "./assets/images/birdcardsProfile.jpg",
+        "link": "./birdApp.html",
+        "language": "fr"
+    },    
 // #################### ENGLISH ####################
     {
         "date": "2025-03-25",
@@ -134,7 +142,7 @@ const projects = [
     {
         "date": "2021-09-01",
         "title": "Site for an Integration Day",
-        "description": "Creating a website for the integration day of Prép’ISIMA 2021-2023.",
+        "description": "Creating a website for the integration day of Prép'ISIMA 2021-2023.",
         "image": "../assets/images/projet2.jpg",
         "link": "./integration.html",
         "language": "en"
@@ -177,6 +185,14 @@ const projects = [
         "description": "Minecraft mod adding Platypus.",
         "image": "../assets/images/projet7.png",
         "link": "./minecraftMod.html",
+        "language": "en"
+    },
+    {
+        "date": "2025-02-26",
+        "title": "BirdCards",
+        "description": "Educational app to learn bird names with images and sounds.",  
+        "image": "../assets/images/birdcardsProfile.jpg",
+        "link": "./birdApp.html",
         "language": "en"
     }
 ]
