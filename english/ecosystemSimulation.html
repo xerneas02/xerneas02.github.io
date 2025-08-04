@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ecosystem Simulation - C# project with modular architecture simulating natural environment evolution">
+    <meta name="author" content="Mathis Roubille">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Ecosystem Simulation</title>
+
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+
+    <!-- Header and navigation -->
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="../ecosystemSimulation.html">
+                    <img src="../assets/images/UK.png" alt="Language Flag">
+                </a>
+            </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html" title="Projects">Projects</a></li>
+                        <li><a href="./profil.html" title="Profile">Profile</a></li>
+                        <li><a href="./contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="../assets/images/ecosystemBanner.png" class="img-responsive" alt="Ecosystem Simulation Banner">
+
+                    <div class="card-container" style="border: 1px solid lightgray; padding: 20px;">
+                        <div class="text-center">
+                            <h1 class="h2">Ecosystem Simulation</h1>
+                            <h3>Modular Software Architecture in C#</h3>
+                        </div>
+
+                        <p>
+                            As part of our software architecture course, we developed an ecosystem simulation software 
+                            designed with a highly modular architecture in .NET. This project simulates complex 
+                            interactions between different species in an evolving natural environment.
+                        </p>
+
+                        <h3>Simulation Overview:</h3>
+                        <img src="../assets/images/sheeps.png" class="img-responsive" alt="Overview of the ecosystem simulation"><br>
+
+                        <h3 class="template-title-example">Simulation Concept</h3>
+                        <p>
+                            The simulation models a complete ecosystem where three types of entities interact:
+                        </p>
+                        <ul>
+                            <li><strong>Sheep</strong>: Herbivores that feed on grass and can flee from predators</li>
+                            <li><strong>Wolves</strong>: Predators that hunt sheep to survive</li>
+                            <li><strong>Grass</strong>: Primary producer that grows naturally and feeds herbivores</li>
+                        </ul>
+
+                        <h3>Entities and their behaviors:</h3>
+                        <img src="../assets/images/sheepEating.gif" class="img-responsive" alt="Sheep eating grass"><br>
+
+                        <h3 class="template-title-example">Modular Architecture</h3>
+                        <p>
+                            The project is designed with a clear separation between the simulation engine and the graphical interface:
+                        </p>
+                        <ul>
+                            <li><strong>Simulation Engine</strong>: Completely independent from graphics, handles business logic</li>
+                            <li><strong>Graphical Interface</strong>: Developed with MonoGame, visually represents simulation state</li>
+                            <li><strong>Entity System</strong>: Architecture based on modular entities with autonomous behaviors</li>
+                            <li><strong>Finite State Machines</strong>: Control complex behaviors for each entity type</li>
+                        </ul>
+
+                        <h3 class="template-title-example">Evolution System</h3>
+                        <p>
+                            Each entity possesses heritable characteristics that evolve across generations:
+                        </p>
+                        <ul>
+                            <li><strong>Speed</strong>: Determines movement velocity</li>
+                            <li><strong>Size</strong>: Influences interactions and energy consumption</li>
+                            <li><strong>Field of Vision</strong>: Perception angle (0° to 360°)</li>
+                            <li><strong>Vision Distance</strong>: Detection radius for other entities</li>
+                            <li><strong>Genetic Mutations</strong>: Random variations during reproduction</li>
+                        </ul>
+
+                        <img src="../assets/images/sheepAware.webp" class="img-responsive" alt="Sheep with small vision distance but big field of vision"><br>
+                        <img src="../assets/images/sheepSniper.webp" class="img-responsive" alt="Sheep with big vision distance but small field of vision"><br>
+
+                        <h3>Genetic Evolution:</h3>
+
+                        <h3 class="template-title-example">Adaptive Behaviors</h3>
+                        
+                        <h4>Sheep</h4>
+                        <p>Simple behavioral automaton managing transitions between:</p>
+                        <ul>
+                            <li>Food searching</li>
+                            <li>Resting to recover energy</li>
+                            <li>Fleeing when predators are present</li>
+                            <li>Active feeding</li>
+                        </ul>
+
+                        <h4>Wolves</h4>
+                        <p>More complex automaton including:</p>
+                        <ul>
+                            <li>Active hunting with acceleration towards prey</li>
+                            <li>Territorial searching</li>
+                            <li>Rest and recovery</li>
+                            <li>Adaptive predation strategies</li>
+                        </ul>
+
+                        <h4>Grass</h4>
+                        <p>Automatic growth and progressive energy regeneration.</p>
+
+                        <h3>Behavioral Automata:</h3>
+
+                        <h3 class="template-title-example">Technical Optimizations</h3>
+                        <ul>
+                            <li><strong>Chunk System</strong>: Spatial optimization for performance</li>
+                            <li><strong>Responsive Interface</strong>: Fully modular window sizing</li>
+                            <li><strong>State Saving</strong>: System allowing to save and restore simulation state</li>
+                            <li><strong>Energy Management</strong>: Reproduction system based on energy accumulation</li>
+                        </ul>
+
+                        <h3>User Interface:</h3>
+                        <h3 class="template-title-example">Technologies Used</h3>
+                        <ul>
+                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>C# (.NET Framework)</li>
+                            <li><span class="fa-icon"><i class="fa fa-gamepad"></i></span>MonoGame (Graphics Rendering)</li>
+                            <li><span class="fa-icon"><i class="fa fa-cogs"></i></span>Modular Architecture</li>
+                            <li><span class="fa-icon"><i class="fa fa-random"></i></span>Finite State Machines</li>
+                            <li><span class="fa-icon"><i class="fa fa-line-chart"></i></span>Genetic Algorithms</li>
+                        </ul>
+
+                        <h3 class="template-title-example">External Links</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/Thomas-Mewily/InteractionSauvage/tree/master" target="_blank">
+                                    <span class="fa-icon"><i class="fa fa-github"></i></span>Source code on GitHub
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="template-title-example">Key Learnings</h3>
+                        <p>
+                            This project allowed me to deepen my knowledge in:
+                        </p>
+                        <ul>
+                            <li>Modular software architecture and separation of concerns</li>
+                            <li>Advanced object-oriented programming in C#</li>
+                            <li>Implementation of finite state machines for behavioral AI</li>
+                            <li>Performance optimization in real-time simulations</li>
+                            <li>Graphics development with MonoGame</li>
+                            <li>Modeling complex and emergent systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Last updated on 04/08/2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+
+</html>

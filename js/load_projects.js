@@ -97,6 +97,14 @@ const projects = [
         "image": "./assets/images/birdcardsProfile.jpg",
         "link": "./birdApp.html",
         "language": "fr"
+    },
+    {
+        "date": "2024-05-01",
+        "title": "Simulation d'Écosystème",
+        "description": "Projet d'architecture logicielle modulaire en C# simulant l'évolution d'un écosystème avec moutons, loups et herbe.",
+        "image": "./assets/images/ecosystemSimulation.jpg",
+        "link": "./ecosystemSimulation.html",
+        "language": "fr"
     },    
 // #################### ENGLISH ####################
     {
@@ -193,6 +201,14 @@ const projects = [
         "description": "Educational app to learn bird names with images and sounds.",  
         "image": "../assets/images/birdcardsProfile.jpg",
         "link": "./birdApp.html",
+        "language": "en"
+    },
+    {
+        "date": "2024-05-01",
+        "title": "Ecosystem Simulation",
+        "description": "Modular software architecture project in C# simulating ecosystem evolution with sheep, wolves and grass.",
+        "image": "../assets/images/ecosystemSimulation.jpg",
+        "link": "./ecosystemSimulation.html",
         "language": "en"
     }
 ]

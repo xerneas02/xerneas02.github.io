@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Simulation d'écosystème - Projet C# avec architecture modulaire simulant l'évolution d'un environnement naturel">
+    <meta name="author" content="Mathis Roubille">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Simulation d'Écosystème</title>
+
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+
+    <!-- Header et navigation -->
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <a href="./english/ecosystemSimulation.html">
+                    <img src="./assets/images/France.png" alt="Drapeau Langue">
+                </a>
+            </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html" title="Projets">Projets</a></li>
+                        <li><a href="./profil.html" title="Profil">Profil</a></li>
+                        <li><a href="./contact.html" title="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="./assets/images/ecosystemBanner.png" class="img-responsive" alt="Bannière Simulation d'Écosystème">
+
+                    <div class="card-container" style="border: 1px solid lightgray; padding: 20px;">
+                        <div class="text-center">
+                            <h1 class="h2">Simulation d'Écosystème</h1>
+                            <h3>Architecture Logicielle Modulaire en C#</h3>
+                        </div>
+
+                        <p>
+                            Dans le cadre de notre cours d'architecture logicielle, nous avons développé un logiciel de simulation 
+                            d'écosystème conçu avec une architecture hautement modulaire en .NET. Ce projet simule les interactions 
+                            complexes entre différentes espèces dans un environnement naturel évolutif.
+                        </p>
+
+                        <h3>Aperçu de la simulation :</h3>
+                        <img src="./assets/images/sheeps.png" class="img-responsive" alt="Vue d'ensemble de la simulation d'écosystème"><br>
+
+                        <h3 class="template-title-example">Concept de la Simulation</h3>
+                        <p>
+                            La simulation modélise un écosystème complet où trois types d'entités interagissent :
+                        </p>
+                        <ul>
+                            <li><strong>Les moutons</strong> : Herbivores qui se nourrissent d'herbe et peuvent fuir les prédateurs</li>
+                            <li><strong>Les loups</strong> : Prédateurs qui chassent les moutons pour survivre</li>
+                            <li><strong>L'herbe</strong> : Producteur primaire qui croît naturellement et nourrit les herbivores</li>
+                        </ul>
+
+                        <h3>Entités et leurs comportements :</h3>
+                        <img src="./assets/images/sheepEating.gif" class="img-responsive" alt="Mouton en train de manger de l'herbe"><br>
+
+                        <h3 class="template-title-example">Architecture Modulaire</h3>
+                        <p>
+                            Le projet est conçu avec une séparation claire entre le moteur de simulation et l'interface graphique :
+                        </p>
+                        <ul>
+                            <li><strong>Moteur de simulation</strong> : Entièrement indépendant de la partie graphique, gère la logique métier</li>
+                            <li><strong>Interface graphique</strong> : Développée avec MonoGame, représente visuellement l'état de la simulation</li>
+                            <li><strong>Système d'entités</strong> : Architecture basée sur des entités modulaires avec comportements autonomes</li>
+                            <li><strong>Automates finis</strong> : Contrôlent les comportements complexes de chaque type d'entité</li>
+                        </ul>
+
+                        <h3>Diagramme d'architecture :</h3>
+
+                        <h3 class="template-title-example">Système d'Évolution</h3>
+                        <p>
+                            Chaque entité possède des caractéristiques héréditaires qui évoluent au fil des générations :
+                        </p>
+                        <ul>
+                            <li><strong>Vitesse</strong> : Détermine la rapidité de déplacement</li>
+                            <li><strong>Taille</strong> : Influence les interactions et la consommation d'énergie</li>
+                            <li><strong>Champ de vision</strong> : Angle de perception (0° à 360°)</li>
+                            <li><strong>Distance de vue</strong> : Rayon de détection des autres entités</li>
+                            <li><strong>Mutations génétiques</strong> : Variations aléatoires lors de la reproduction</li>
+                        </ul>
+
+                        <img src="./assets/images/sheepAware.webp" class="img-responsive" alt="Mouton avec une petite distance de vision mais un grand champ de vision"><br>
+                        <img src="./assets/images/sheepSniper.webp" class="img-responsive" alt="Mouton avec une grande distance de vision mais un petit champ de vision"><br>
+
+                        <h3>Évolution génétique :</h3>
+
+                        <h3 class="template-title-example">Comportements Adaptatifs</h3>
+                        
+                        <h4>Moutons</h4>
+                        <p>Automate comportemental simple gérant les transitions entre :</p>
+                        <ul>
+                            <li>Recherche de nourriture</li>
+                            <li>Repos pour récupérer de l'énergie</li>
+                            <li>Fuite en présence de prédateurs</li>
+                            <li>Alimentation active</li>
+                        </ul>
+
+                        <h4>Loups</h4>
+                        <p>Automate plus complexe incluant :</p>
+                        <ul>
+                            <li>Chasse active avec accélération vers les proies</li>
+                            <li>Recherche territoriale</li>
+                            <li>Repos et récupération</li>
+                            <li>Stratégies de prédation adaptatives</li>
+                        </ul>
+
+                        <h4>Herbe</h4>
+                        <p>Croissance automatique et régénération énergétique progressive.</p>
+
+                        <h3>Automates comportementaux :</h3>
+
+                        <h3 class="template-title-example">Optimisations Techniques</h3>
+                        <ul>
+                            <li><strong>Système de chunks</strong> : Optimisation spatiale pour les performances</li>
+                            <li><strong>Interface responsive</strong> : Fenêtre entièrement modulaire en taille</li>
+                            <li><strong>Sauvegarde d'états</strong> : Système permettant de sauvegarder et restaurer l'état de la simulation</li>
+                            <li><strong>Gestion énergétique</strong> : Système de reproduction basé sur l'accumulation d'énergie</li>
+                        </ul>
+
+                        <h3>Interface utilisateur :</h3>
+                        <h3 class="template-title-example">Technologies Utilisées</h3>
+                        <ul>
+                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>C# (.NET Framework)</li>
+                            <li><span class="fa-icon"><i class="fa fa-gamepad"></i></span>MonoGame (Rendu graphique)</li>
+                            <li><span class="fa-icon"><i class="fa fa-cogs"></i></span>Architecture modulaire</li>
+                            <li><span class="fa-icon"><i class="fa fa-random"></i></span>Automates finis</li>
+                            <li><span class="fa-icon"><i class="fa fa-line-chart"></i></span>Algorithmes génétiques</li>
+                        </ul>
+
+                        <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/Thomas-Mewily/InteractionSauvage/tree/master" target="_blank">
+                                    <span class="fa-icon"><i class="fa fa-github"></i></span>Code source sur GitHub
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="template-title-example">Apprentissages Clés</h3>
+                        <p>
+                            Ce projet m'a permis d'approfondir mes connaissances en :
+                        </p>
+                        <ul>
+                            <li>Architecture logicielle modulaire et séparation des responsabilités</li>
+                            <li>Programmation orientée objet avancée en C#</li>
+                            <li>Implémentation d'automates finis pour l'IA comportementale</li>
+                            <li>Optimisation des performances dans les simulations en temps réel</li>
+                            <li>Développement graphique avec MonoGame</li>
+                            <li>Modélisation de systèmes complexes et émergents</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Mis à jour le 04/08/2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
