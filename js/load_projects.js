@@ -102,7 +102,7 @@ const projects = [
         "date": "2024-05-01",
         "title": "Simulation d'Écosystème",
         "description": "Projet d'architecture logicielle modulaire en C# simulant l'évolution d'un écosystème avec moutons, loups et herbe.",
-        "image": "./assets/images/ecosystemSimulation.jpg",
+        "image": "./assets/images/ecosystem.png",
         "link": "./ecosystemSimulation.html",
         "language": "fr"
     },    
@@ -207,7 +207,7 @@ const projects = [
         "date": "2024-05-01",
         "title": "Ecosystem Simulation",
         "description": "Modular software architecture project in C# simulating ecosystem evolution with sheep, wolves and grass.",
-        "image": "../assets/images/ecosystemSimulation.jpg",
+        "image": "../assets/images/ecosystem.png",
         "link": "./ecosystemSimulation.html",
         "language": "en"
     }
