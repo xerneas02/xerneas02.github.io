@@ -105,7 +105,23 @@ const projects = [
         "image": "./assets/images/ecosystem.png",
         "link": "./ecosystemSimulation.html",
         "language": "fr"
-    },    
+    },
+    {
+        "date": "2025-07-01",
+        "title": "Convertisseur BBModel → BDEngine",
+        "description": "Convertisseur Python permettant de transformer des modèles Blockbench vers le format Block Display Engine pour Minecraft.",
+        "image": "./assets/images/BDEngine.png",
+        "link": "./bbmodelConverter.html",
+        "language": "fr"
+    },
+    {
+        "date": "2025-08-28",
+        "title": "Status Page Grafana - MessMass",
+        "description": "Création d'une status page avec Grafana et Prometheus pour surveiller l'état des middleware critiques chez Michelin.",
+        "image": "./assets/images/Status.png",
+        "link": "./statusPage.html",
+        "language": "fr"
+    },
 // #################### ENGLISH ####################
     {
         "date": "2025-03-25",
@@ -209,6 +225,22 @@ const projects = [
         "description": "Modular software architecture project in C# simulating ecosystem evolution with sheep, wolves and grass.",
         "image": "../assets/images/ecosystem.png",
         "link": "./ecosystemSimulation.html",
+        "language": "en"
+    },
+    {
+        "date": "2025-07-01",
+        "title": "BBModel → BDEngine Converter",
+        "description": "Python converter to transform Blockbench models to Block Display Engine format for Minecraft.",
+        "image": "../assets/images/BDEngine.png",
+        "link": "./bbmodelConverter.html",
+        "language": "en"
+    },
+    {
+        "date": "2025-08-28",
+        "title": "Grafana Status Page - MessMass",
+        "description": "Creation of a status page with Grafana and Prometheus to monitor critical middleware status at Michelin.",
+        "image": "../assets/images/Status.png",
+        "link": "./statusPage.html",
         "language": "en"
     }
 ]

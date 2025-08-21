@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Page décrivant la conversion de modèles Blockbench vers le moteur Block Display Engine" name="author">
+
+    <!-- Désactive la mise en surbrillance sur IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Convertisseur BBModel → BDEngine</title>
+
+    <!-- Feuille de style principale de votre portfolio -->
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Barre de navigation -->
+    <header>
+        <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="language-button">
+                <!-- Lien vers la version anglaise (non fournie) -->
+                <a href="./english/bbmodelConverter.html">
+                  <img src="./assets/images/France.png" alt="Drapeau Langue">
+                </a>
+            </div>
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Basculer la navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="./index.html" title="">Projets</a></li>
+                        <li><a href="./profil.html" title="">Profil</a></li>
+                        <li><a href="./contact.html" title="">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="./assets/images/BDEBanner.png" class="img-responsive" alt="Display Block">
+                    <!-- <img src="./assets/images/bbConverterBanner.png" class="img-responsive" alt="Bannière du convertisseur Blockbench → BDEngine"> -->
+                    <div class="card-container" style="border: 1px solid lightgray;">
+                        <!-- Illustrations ajoutées depuis la racine du projet -->
+                        <div class="text-center">
+                            <h1 class="h2">Convertisseur BBModel → BDEngine</h1>
+                        </div>
+                        <p>
+                            Ce projet a pour objectif de convertir des modèles issus de <strong>Blockbench</strong>, un
+                            logiciel de modélisation 3D très populaire dans la communauté Minecraft, vers un
+                            format compatible avec <strong>Block Display Engine</strong> (BDEngine). L'idée est de rendre
+                            accessible une grande variété d'objets conçus pour des mods sans nécessiter
+                            l'installation de modifications côté client : on exploite les entités d'affichage
+                            introduites dans les versions récentes de Minecraft (<em>block display</em> et
+                            <em>item display</em>) ainsi que les têtes de joueur personnalisables pour recréer la
+                            géométrie et les textures.
+                        </p>
+                        <p>
+                            <strong>Blockbench</strong> permet de concevoir des modèles à base de cubes en précisant
+                            leurs dimensions (<code>from</code>/<code>to</code>), leurs rotations et les coordonnées
+                            UV des différentes faces. Les modèles sont enregistrés dans un fichier JSON
+                            <code>.bbmodel</code> et sont essentiellement destinés à être utilisés dans des mods ou
+                            des packs de ressources. À l'inverse, <strong>BDEngine</strong> est un moteur
+                            open‑source mis au point par <a href="https://github.com/illystray" target="blank_">illystray</a>
+                            pour simplifier la création d'objets 3D en jeu via les entités d'affichage de
+                            vanilla. Je n'en suis pas l'auteur ; mon travail porte sur le développement
+                            d'un convertisseur entre Blockbench et BDEngine. Dans ce moteur, chaque cube est
+                            représenté par une « tête de joueur » dont on contrôle l'échelle, la rotation et
+                            la texture.
+                        </p>
+                        <p>
+                            Un <em>mod</em> est un programme additionnel qui modifie ou enrichit le comportement du
+                            jeu. Les joueurs doivent installer les mods localement, et l'utilisation est souvent
+                            limitée à certaines versions de Minecraft. Avec BDEngine, tous les objets sont
+                            reproduits en pur vanilla : seules des commandes et des ressources sont nécessaires,
+                            ce qui facilite la distribution et évite les contraintes liées aux mods.
+                        </p>
+                        <h3 class="template-title-example">Différences entre BBModel et BDEngine</h3>
+                        <p>
+                            Dans un modèle Blockbench, la géométrie est composée de plusieurs <em>éléments</em>,
+                            généralement des parallélépipèdes. Chaque élément est défini par ses coordonnées
+                            <code>from = (x_f, y_f, z_f)</code> et <code>to = (x_t, y_t, z_t)</code> exprimées en
+                            pixels (1 bloc = 16 pixels). On peut également définir une rotation autour d'un pivot.
+                            BDEngine, quant à lui, ne connaît que des entités d'affichage : un « head
+                            display » représente un cube dont la taille par défaut est 8 × 8 × 8 pixels. Pour
+                            reproduire un élément de Blockbench, il faut calculer la translation, l'échelle et
+                            la rotation de la tête en nombre de blocs (division par 16) et appliquer les
+                            textures sur chacune des six faces.
+                        </p>
+                        <p>
+                            La conversion passe donc par un changement de repère et d'unités. On calcule tout
+                            d'abord le <em>centre du modèle</em> afin d'aligner l'ensemble de la structure autour de
+                            cette origine. Puis, pour chaque élément, on détermine :
+                        </p>
+                        <ul>
+                            <li>La position du coin inférieur : <span class="math">bottom = (\min(x_f, x_t), \min(y_f, y_t), \min(z_f, z_t))</span>.</li>
+                            <li>La taille en pixels : <span class="math">width = |x_t - x_f|</span>,
+                                <span class="math">height = |y_t - y_f|</span>, <span class="math">depth = |z_t - z_f|</span>.</li>
+                            <li>La rotation locale (X, Y, Z) en degrés.</li>
+                        </ul>
+                        <p>
+                            Pour convertir ces valeurs en coordonnées BDEngine, on utilise les formules
+                            suivantes. Le moteur place chaque tête par rapport au <em>centre de sa face
+                            supérieure</em> : si l'élément mesure
+                            <span style="font-family:monospace">width x height × depth</span> et repose sur
+                            <span class="math">bottom = (b_x,b_y,b_z)</span>, alors le centre du cube est situé en
+                            <span class="math">center_x = b_x + \frac{width}{2}</span>, <span class="math">center_z = b_z + \frac{depth}{2}</span> et la face
+                            supérieure à <span class="math">top_y = b_y + height</span>. La position en blocs s'obtient en
+                            soustrayant le centre du modèle et en divisant par 16 :
+                        </p>
+                        <div class="math">\begin{align*}
+pos_x &= \frac{center_x - model_center_x}{16} \\
+pos_y &= \frac{top_y    - model_center_y}{16} \\
+pos_z &= \frac{center_z - model_center_z}{16}
+\end{align*}</div>
+                        <p>
+                            L'échelle est déduite du ratio entre la taille de l'élément et la taille native
+                            d'une tête (8 pixels) :
+                        </p>
+                        <div class="math">\begin{align*}
+scale_x &= \max\left(\frac{width}{8},\ min\_scale\right) \\
+scale_y &= \max\left(\frac{height}{8},\ min\_scale\right) \\
+scale_z &= \max\left(\frac{depth}{8},\ min\_scale\right)
+\end{align*}</div>
+                        <p>
+                            Les rotations de Blockbench suivent l'ordre « Z → X → Y ». Pour obtenir la matrice de
+                            rotation 4×4 utilisée par BDEngine, on calcule d'abord les rotations élémentaires
+                            (en radians) autour des trois axes :
+                        </p>
+                        <div class="math">\begin{align*}
+Rx &= \begin{bmatrix}1 & 0 & 0 \\ 0 & \cos(rx) & -\sin(rx) \\ 0 & \sin(rx) & \cos(rx)\end{bmatrix} \\
+Ry &= \begin{bmatrix}\cos(ry) & 0 & \sin(ry) \\ 0 & 1 & 0 \\ -\sin(ry) & 0 & \cos(ry)\end{bmatrix} \\
+Rz &= \begin{bmatrix}\cos(rz) & -\sin(rz) & 0 \\ \sin(rz) & \cos(rz) & 0 \\ 0 & 0 & 1\end{bmatrix} \\
+M &= Rz \times (Rx \times Ry)
+\end{align*}</div>
+                        <p>
+                            Multipliée à l'échelle, cette matrice de rotation est insérée dans la matrice de
+                            transformation 4×4 :
+                        </p>
+                        <div class="math">\begin{bmatrix}
+M_{00} \cdot scale_x & M_{01} \cdot scale_y & M_{02} \cdot scale_z & pos_x \\
+M_{10} \cdot scale_x & M_{11} \cdot scale_y & M_{12} \cdot scale_z & pos_y \\
+M_{20} \cdot scale_x & M_{21} \cdot scale_y & M_{22} \cdot scale_z & pos_z \\
+0 & 0 & 0 & 1
+\end{bmatrix}</div>
+                        <p>
+                            Cette matrice est directement écrite dans le fichier <code>.bdengine</code> et
+                            interprétée en jeu par l'entité <em>head display</em>.
+                        </p>
+                        <h3 class="template-title-example">Subdivision intelligente</h3>
+                        <p>
+                            Dans le mode « <b>stretch</b> », chaque élément du modèle est représenté par une seule
+                            tête étirée. Cette approche est rapide mais peut déformer les textures et
+                            détériorer le rendu. Le mode « <b>smart cube</b> » subdivise au contraire les
+                            éléments en plusieurs petits cubes (16, 8, 4, 2 ou 1 pixels de côté). Un algorithme
+                            d'optimisation analyse la dimension de chaque élément et ses coordonnées UV afin de
+                            choisir la meilleure décomposition : on préserve ainsi des pixels carrés et on
+                            réduit l'étirement des textures. Les faces planes sont converties en fines têtes
+                            (épaisseur ≈ 0,011 bloc) pour simuler une surface sans volume.
+                        </p>
+                        <p>
+                            Les têtes de joueur sont un élément clé de cette astuce : elles disposent d'un
+                            <em>template</em> de texture de 64×64 pixels où chaque face est une région de
+                            8×8 pixels (par défaut). Pour appliquer une texture personnalisée, on calcule
+                            d'abord la région UV de l'élément dans le fichier Blockbench, puis on la
+                            redimensionne à la région correspondante dans le template de la tête. Par
+                            exemple, la face <code>north</code> d'un cube est mappée à la zone (8–16, 8–16)
+                            du template. Si la texture d'origine a une largeur <code>w</code> et une hauteur
+                            <code>h</code>, la correspondance linéaire entre une coordonnée <code>u</code> dans
+                            Blockbench et la coordonnée <code>U</code> dans la tête est : <code>U = x_0 +
+                            u × 8 / w</code>. De même pour l'axe vertical : <code>V = y_0 + v × 8 / h</code>,
+                            où <code>(x_0, y_0)</code> est le coin supérieur gauche de la région cible. Cette
+                            transformation affine garantit que les pixels restent carrés (rapport 1:1) et
+                            que la texture n'est pas déformée lors du mappage sur la tête.
+                        </p>
+                        <p>
+                            Pour chaque sous-cube, on calcule sa position locale
+                            <code>(dx, dy, dz)</code>, sa taille <code>(sx, sy, sz)</code> et on applique, si
+                            nécessaire, la rotation de l'élément et celle de ses parents. Le centre de la face
+                            supérieure du sous-cube est déplacé vers le repère global via la formule
+                            ci‑dessus. La texture est découpée selon les coordonnées UV de chaque face : un
+                            sous-rectangle du fichier de texture est redimensionné vers la zone active (32×32
+                            pixels) de la tête. Les zones « up », « down », « north », « south », « east » et
+                            « west » de la texture d'une tête correspondent respectivement aux régions
+                            (8,0–16,8), (16,0–24,8), (8,8–16,16), (24,8–32,16), (0,8–8,16) et (16,8–24,16) sur un
+                            PNG 64×64. En assignant les sous-textures à ces régions, on obtient un rendu précis
+                            et net en jeu.
+                        </p>
+                        <h3 class="template-title-example">Fonctionnement du code</h3>
+                        <p>
+                            Le projet est organisé autour de plusieurs modules :
+                        </p>
+                        <ul>
+                            <li><strong><code>converter.py</code></strong> : point d'entrée qui orchestre la lecture
+                                du fichier <code>.bbmodel</code>, l'extraction des textures et l'écriture du
+                                fichier <code>.bdengine</code> compressé (gzip + base64).</li>
+                            <li><strong><code>conversion_strategy.py</code></strong> : définit deux stratégies de
+                                conversion : <em>StretchConversionStrategy</em> (une tête par élément) et
+                                <em>SmartCubeConversionStrategy</em> (décomposition en sous-cubes et
+                                subdivision des textures).</li>
+                            <li><strong><code>head_factory.py</code></strong> : fabrique les structures JSON
+                                représentant les têtes BDEngine, calcule les matrices de transformation et
+                                encode les textures en base64.</li>
+                            <li><strong><code>math_utils.py</code></strong> : regroupe les conversions degrés ↔︎
+                                radians, la création de matrices de rotation 3×3 et 4×4, ainsi que la
+                                transformation de points 3D.</li>
+                            <li><strong><code>texture_manager.py</code></strong> et
+                                <strong><code>texture_subdivider.py</code></strong> : chargent les images des
+                                textures, appliquent un traitement sur la transparence, extraient les régions
+                                UV pertinentes et subdivisent les textures pour chaque sous-cube.</li>
+                            <li><strong><code>smart_cube_optimizer.py</code></strong> : analyse les dimensions des
+                                éléments pour déterminer la meilleure combinaison de cubes (exacte ou avec
+                                étirement contrôlé) et suggérer des subdivisions en fonction de la densité
+                                d'UV.</li>
+                        </ul>
+                        <h3 class="template-title-example">Exemples de modèles convertis</h3>
+                        <p>
+                            Afin d'illustrer concrètement les possibilités offertes par le moteur BDEngine et
+                            le convertisseur, voici quelques exemples de modèles. Les images de gauche
+                            montrent soit des modèles entièrement créés avec BDEngine, soit des modèles
+                            conçus dans Blockbench. Les images de droite présentent les mêmes objets
+                            convertis en têtes de joueur et entités d'affichage. On peut observer comment
+                            les rotations, les échelles et les textures sont restituées sans avoir recours
+                            à des mods.
+                        </p>
+                        <!-- Première ligne : objets de décoration créés avec BDEngine -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/display_block2.png" class="img-responsive" alt="Banc en bois créé avec BDEngine">
+                                    <figcaption>Un banc en bois entièrement assemblé via des entités d'affichage. Chaque planche est une tête étirée, et l'algorithme choisit une subdivision fine pour conserver des textures nettes.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/display_block3.png" class="img-responsive" alt="Globe terrestre réalisé avec des cubes et rotations">
+                                    <figcaption>Ce globe terrestre combine plusieurs cubes texturés et des rotations autour de différents axes pour incliner le cube principal et sa base. Les sous-cubes permettent de conserver le quadrillage des continents.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!-- Deuxième ligne : Pikachu – comparaison avant/après conversion -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/pikachu_block_bench.png" class="img-responsive" alt="Modèle Pikachu d'origine dans Blockbench">
+                                    <figcaption>Modèle Pikachu conçu dans Blockbench. Il est composé de nombreux parallélépipèdes imbriqués et d'une texture détaillée de 64×64 pixels.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/pikachu_bdengine.png" class="img-responsive" alt="Pikachu après conversion en BDEngine">
+                                    <figcaption>Le même Pikachu converti en têtes BDEngine. Les formes arrondies sont approximées par des subdivisions et l'algorithme <em>smart cube</em> préserve la texture des joues, des oreilles et de la queue.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!-- Troisième ligne : ornithorynque (platypus) – comparaison avant/après conversion -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/platypus_block_bench.png" class="img-responsive" alt="Ornithorynque dans Blockbench">
+                                    <figcaption>Un ornithorynque réalisé dans Blockbench. Les lignes rouges, vertes et bleues indiquent l'orientation des axes (X, Y, Z) dans l'espace de modélisation.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <figure>
+                                    <img src="./assets/images/platypus_bdengine.png" class="img-responsive" alt="Ornithorynque converti dans BDEngine">
+                                    <figcaption>Après conversion, le modèle utilise exclusivement des têtes de joueur. On conserve la forme générale et la texture du bec, des pattes et de la queue grâce aux subdivisions adaptées.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <p>
+                            Ces exemples démontrent que BDEngine peut servir à produire des meubles, des objets décoratifs et des créatures tout en restant fidèle aux modèles d'origine. Ils illustrent également la capacité du convertisseur à gérer des modèles complexes en respectant la rotation, l'échelle et la texture.
+                        </p>
+
+                        <h3 class="template-title-example">Limitations et évolutions futures</h3>
+                        <p>
+                            Ce convertisseur est encore en cours de développement. Certaines fonctionnalités
+                            manquent ou restent imparfaites :
+                        </p>
+                        <ul>
+                            <li>Les textures à haute résolution (> 16 pixels par bloc) ne sont pas encore
+                                supportées. Une amélioration future consistera à adapter la subdivision des
+                                cubes aux textures 32×32 ou 64×64.</li>
+                            <li>Les parties transparentes sont traitées en aplats mais ne gèrent pas
+                                correctement l'alpha. Il serait souhaitable d'ajouter un rendu par régions
+                                opaques pour optimiser le nombre de têtes générées.</li>
+                            <li>Le positionnement relatif des groupes (<code>outliner</code>) de Blockbench
+                                nécessite encore des ajustements pour que les rotations et translations se
+                                composent exactement comme dans le logiciel.</li>
+                            <li>Enfin, l'API BDEngine évolue ; certaines options pourront être ajoutées (éclairage,
+                                animations, changements de texture dynamiques).</li>
+                        </ul>
+                        <h3 class="template-title-example">Notions utilisées</h3>
+                        <ul>
+                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>Python (bibliothèques standard)</li>
+                            <li><span class="fa-icon"><i class="fa fa-cube"></i></span>Numpy pour les matrices et les calculs de rotation</li>
+                            <li><span class="fa-icon"><i class="fa fa-image"></i></span>Pillow pour le traitement d'images et l'encodage PNG</li>
+                            <li><span class="fa-icon"><i class="fa fa-file-code-o"></i></span>JSON et Gzip pour la sérialisation des modèles</li>
+                            <li><span class="fa-icon"><i class="fa fa-cube"></i></span>Mécanismes de Block Display et de têtes de joueur dans Minecraft</li>
+                            <li><span class="fa-icon"><i class="fa fa-superscript"></i></span>Notions mathématiques :
+                                <ul>
+                                    <li>Algèbre linéaire (matrices de rotation, transformation 3D)</li>
+                                    <li>Trigonométrie (calculs de cosinus, sinus pour les rotations)</li>
+                                    <li>Changement de repère et conversion d'unités</li>
+                                    <li>Optimisation et subdivision intelligente</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h3 class="template-title-example">Liens externes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/xerneas02/Block-Bench-to-Block-Display-Engine" target="blank_">
+                                    <span class="fa-icon"><i class="fa fa-github"></i></span>GitHub du projet
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pied de page -->
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Mis à jour le 21/08/2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MathJax pour l'affichage des formules LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
+    </script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
