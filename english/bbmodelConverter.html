@@ -150,25 +150,34 @@ $$</div>
                             <li><strong><code>texture_manager.py</code></strong> and <strong><code>texture_subdivider.py</code></strong>: load texture images, apply transparency processing, extract relevant UV regions and subdivide textures for each sub-cube.</li>
                             <li><strong><code>smart_cube_optimizer.py</code></strong>: analyzes element dimensions to determine the best cube combination (exact or with controlled stretching) and suggest subdivisions based on UV density.</li>
                         </ul>
-                        <h3 class="template-title-example">Converted model examples</h3>
+                        <h3 class="template-title-example">BDEngine creation examples</h3>
                         <p>
-                            To concretely illustrate the possibilities offered by the BDEngine engine and converter, here are some model examples. The left images show either models entirely created with BDEngine or models designed in Blockbench. The right images present the same objects converted to player heads and display entities. You can observe how rotations, scales, and textures are rendered without resorting to mods.
+                            Before presenting the converter results, here are some examples of creations 
+                            made by users directly with BDEngine. These models illustrate the engine's 
+                            capabilities and show what can be accomplished with vanilla display entities.
                         </p>
                         <!-- First row: decorative objects created with BDEngine -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
                                 <figure>
                                     <img src="../assets/images/display_block2.png" class="img-responsive" alt="Wooden bench created with BDEngine">
-                                    <figcaption>A wooden bench entirely assembled via display entities. Each plank is a stretched head, and the algorithm chooses fine subdivision to preserve sharp textures.</figcaption>
+                                    <figcaption>A wooden bench created by a user with BDEngine. Each element is manually positioned to form functional furniture without mods.</figcaption>
                                 </figure>
                             </div>
                             <div class="col-xs-12 col-sm-6">
                                 <figure>
                                     <img src="../assets/images/display_block3.png" class="img-responsive" alt="Earth globe made with cubes and rotations">
-                                    <figcaption>This terrestrial globe combines several textured cubes and rotations around different axes to tilt the main cube and its base. Sub-cubes help preserve the continent grid.</figcaption>
+                                    <figcaption>This terrestrial globe was assembled by a user by combining several textured cubes with precise rotations to represent Earth.</figcaption>
                                 </figure>
                             </div>
                         </div>
+                        
+                        <h3 class="template-title-example">Converted model examples</h3>
+                        <p>
+                            Here are now concrete examples of conversion from Blockbench to BDEngine. 
+                            The left images show the original models in Blockbench, and the right ones 
+                            present the result after conversion by our tool.
+                        </p>
                         <!-- Second row: Pikachu – before/after conversion comparison -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
@@ -200,7 +209,7 @@ $$</div>
                             </div>
                         </div>
                         <p>
-                            These examples demonstrate that BDEngine can serve to produce furniture, decorative objects, and creatures while remaining faithful to original models. They also illustrate the converter's ability to handle complex models while respecting rotation, scale, and texture.
+                            These conversion examples demonstrate the converter's ability to faithfully transform complex Blockbench models into BDEngine structures. You can observe how rotations, scales, and textures are preserved during conversion, allowing vanilla use of creations originally intended for mods.
                         </p>
 
                         <h3 class="template-title-example">Limitations and future developments</h3>
