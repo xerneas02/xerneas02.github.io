@@ -5776,7 +5776,8 @@ textarea {
 }
 
 .carousel-control {
-    top: 50%;
+    position: fixed;
+    top: 50vh;
     bottom: auto;
     width: 50px;
     height: 50px;
@@ -5787,7 +5788,8 @@ textarea {
     color: #fff;
     line-height: 44px;
     text-shadow: none;
-    opacity: 1
+    opacity: 1;
+    z-index: 1000;
 }
 
 .carousel-control:hover {
@@ -5802,19 +5804,19 @@ textarea {
 }
 
 .carousel-control.right {
-    right: -25px
+    right: 25px;
 }
 
 .carousel-control.left {
-    left: -25px
+    left: 25px;
 }
 
 @media (max-width:992px) {
     .carousel-control.right {
-        right: -12px
+        right: 12px;
     }
     .carousel-control.left {
-        left: -12px
+        left: 12px;
     }
 }
 

@@ -45,7 +45,7 @@ const projects = [
     {
         "date": "2023-06-01",
         "title": "Travelling Spaceman",
-        "description": "Projet de première année à l'ISIMA avec pour objectif de développer une intelligence artificielle apprenante pour un jeu.",
+        "description": "Développement d'une IA apprenante pour un jeu vidéo.",
         "image": "./assets/images/projet6.jpg",
         "link": "./travellingSpaceman.html",
         "language": "fr"
@@ -109,7 +109,7 @@ const projects = [
     {
         "date": "2025-07-01",
         "title": "Convertisseur BBModel → BDEngine",
-        "description": "Convertisseur Python permettant de transformer des modèles Blockbench vers le format Block Display Engine pour Minecraft.",
+        "description": "Convertisseur Python de modèles Blockbench vers Block Display Engine.",
         "image": "./assets/images/BDEngine.png",
         "link": "./bbmodelConverter.html",
         "language": "fr"
@@ -117,7 +117,7 @@ const projects = [
     {
         "date": "2025-08-28",
         "title": "Status Page Grafana - MessMass",
-        "description": "Création d'une status page avec Grafana et Prometheus pour surveiller l'état des middleware critiques chez Michelin.",
+        "description": "Tableau de bord Grafana pour surveiller les middleware Michelin.",
         "image": "./assets/images/Status.png",
         "link": "./statusPage.html",
         "language": "fr"
@@ -174,7 +174,7 @@ const projects = [
     {
         "date": "2023-06-01",
         "title": "Travelling Spaceman",
-        "description": "First-year project at ISIMA with the aim of developing a learning artificial intelligence for a game.",
+        "description": "Development of a learning AI for a video game.",
         "image": "../assets/images/projet6.jpg",
         "link": "./travellingSpaceman.html",
         "language": "en"
@@ -230,7 +230,7 @@ const projects = [
     {
         "date": "2025-07-01",
         "title": "BBModel → BDEngine Converter",
-        "description": "Python converter to transform Blockbench models to Block Display Engine format for Minecraft.",
+        "description": "Python converter for Blockbench to Block Display Engine.",
         "image": "../assets/images/BDEngine.png",
         "link": "./bbmodelConverter.html",
         "language": "en"
@@ -238,7 +238,7 @@ const projects = [
     {
         "date": "2025-08-28",
         "title": "Grafana Status Page - MessMass",
-        "description": "Creation of a status page with Grafana and Prometheus to monitor critical middleware status at Michelin.",
+        "description": "Grafana dashboard to monitor Michelin middleware systems.",
         "image": "../assets/images/Status.png",
         "link": "./statusPage.html",
         "language": "en"
