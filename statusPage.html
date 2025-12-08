@@ -27,7 +27,7 @@
     <header>
         <nav class="navbar  navbar-fixed-top navbar-default">
             <div class="language-button">
-                <!-- Lien vers la version anglaise (non fournie) -->
+                <!-- Lien vers la version anglaise -->
                 <a href="./english/statusPage.html">
                   <img src="./assets/images/France.png" alt="Drapeau Langue">
                 </a>
@@ -57,180 +57,164 @@
                     <!-- Bannière illustrant le tableau de bord -->
                     <img src="./assets/images/statusBanner.png" class="img-responsive" alt="Bannière illustrant un tableau de bord de status page">
                     <div class="card-container" style="border: 1px solid lightgray;">
-                        <div class="text-center">
-                            <h1 class="h2">Status Page Grafana - MessMass</h1>
-                        </div>
-                        <p>
-                            Ce projet a été réalisé durant mon stage de fin d'études au sein de l'équipe
-                            <strong>MessMass</strong> de Michelin. L'objectif était de concevoir et de mettre en œuvre
-                            une <em>status page</em> permettant de surveiller en temps réel l'état des middleware critiques
-                            de l'entreprise à travers un tableau de bord intuitif construit avec <strong>Grafana</strong>
-                            et alimenté par <strong>Prometheus</strong>. En 24 semaines, la solution a évolué d'une preuve de
-                            concept simple à un outil riche qui présente les statuts de quinze middleware internes
-                            et externes, l'historique des incidents, des indicateurs de qualité de service (SLI/SLO)
-                            et un accès approfondi (<em>drill-down</em>) pour le diagnostic.
-                        </p>
-                        <h3 class="template-title-example">Contexte et objectifs</h3>
-                        <p>
-                            Dans le cadre du programme <em>OneSystem IT Platforms</em>, l'équipe MessMass cherchait
-                            à améliorer l'observabilité de ses middleware (EDA, MFT, EAI, IFE/M2I, ETL).
-                            La status page devait répondre à plusieurs objectifs : fournir une vision synthétique
-                            de l'état des services, détecter rapidement les défaillances, suivre les niveaux de
-                            service et offrir un accès à des informations détaillées sans surcharger l'interface.
-                            La solution devait également s'intégrer dans l'écosystème existant (Grafana,
-                            Prometheus, ServiceNow) et respecter des standards graphiques pour être reprise
-                            facilement par d'autres équipes.
-                        </p>
-                        <h3 class="template-title-example">Fonctionnalités clés</h3>
-                        <ul>
-                            <li>Monitoring en temps réel de quinze middleware internes et externes via
-                                <strong>Prometheus</strong> et divers <em>exporters</em> (Blackbox, OpenTelemetry, scripts custom).</li>
-                            <li>Indicateurs visuels clairs : statut global (OK/KO/Maintenance), couleurs et icônes
-                                normalisées pour chaque service.</li>
-                            <li>Historique des incidents avec liens vers les tickets ServiceNow et les pages
-                                SharePoint de suivi.</li>
-                            <li>Calcul et affichage des indicateurs de niveau de service (SLI) et du <em>burn rate</em>
-                                des SLO : les performances sont surveillées et comparées à des objectifs.</li>
-                            <li>Fonction <em>drill-down</em> permettant d'afficher la liste détaillée des composants et
-                                des nœuds d'un middleware, avec leurs statuts individuels.</li>
-                            <li>Organisation par domaine fonctionnel (EDA, MFT, EAI, IFE/M2I, ETL) afin de
-                                structurer le tableau de bord et de faciliter la navigation.</li>
-                            <li>Intégration des données issues d'une API interne pour enrichir la page avec des
-                                informations provenant d'autres squads.</li>
-                            <li>Documentation utilisateur et technique complète, lignes directrices de
-                                standardisation graphique et script d'installation simplifié pour garantir la
-                                maintenabilité.</li>
-                        </ul>
-                        <h3 class="template-title-example">Architecture et mise en œuvre</h3>
-                        <p>
-                            La status page s'appuie sur une architecture d'observabilité flexible. Les métriques
-                            sont collectées par <strong>Prometheus</strong> via plusieurs canaux : le <em>Blackbox Exporter</em> pour
-                            mesurer la disponibilité des services (HTTP, ping), des collecteurs OpenTelemetry
-                            pour exporter les jauges internes (file d'attente, nombre de messages), des scripts
-                            <strong>Python</strong> et des tests <strong>K6</strong> pour vérifier la réactivité des APIs. Un service REST
-                            expose également des informations consolidées au format JSON.
-                        </p>
-                        <p>
-                            <strong>Grafana</strong> interroge ces sources et présente les résultats dans des panneaux
-                            personnalisés. La première version utilisait simplement des tableaux et des jauges
-                            binaires. Des itérations successives ont amené l'utilisation du panel
-                            <em>Canvas</em> pour disposer des cartes colorées et dynamiques, et de panneaux combinés
-                            affichant à la fois le statut, l'historique et les SLI. Des requêtes PromQL
-                            calculent les statuts et les seuils d'alerte. Les liens vers ServiceNow et
-                            SharePoint sont générés dynamiquement.
-                        </p>
-                        <h3 class="template-title-example">Évolution du projet</h3>
-                        <p>Le développement s'est déroulé en plusieurs étapes distinctes :</p>
-                        <ul>
-                            <li><strong>1<sup>re</sup> version - PoC Blackbox Exporter :</strong> Une preuve de concept
-                                simple, basée uniquement sur des tests de disponibilité avec le Blackbox
-                                Exporter. Les statuts étaient binaires (up/down) et l'interface très épurée.</li>
-                            <li><strong>2<sup>e</sup> version - Nouveaux statuts et visualisations tests :</strong>
-                                Introduction de statuts plus détaillés (maintenance, erreur, avertissement)
-                                et expérimentations avec des blocs dynamiques sous Grafana. Cette version a
-                                permis de valider des idées mais la disposition restait confuse.</li>
-                            <li><strong>3<sup>e</sup> version - Structuration par domaine et API :</strong>
-                                Réorganisation par domaines fonctionnels (EDA, MFT, EAI, IFE/M2I, ETL) et
-                                intégration des données de l'équipe API. Ajout des indicateurs SLI/SLO et
-                                amélioration de l'ergonomie.</li>
-                            <li><strong>Version finale - Validation par la squad HIP :</strong> Harmonisation des couleurs
-                                et icônes, ajout d'un bandeau d'information et de liens contextuels. Un
-                                formulaire de feedback a été diffusé et a permis d'ajuster le format des SLI,
-                                la pertinence des informations et l'emplacement des liens.</li>
-                        </ul>
+                      <div class="text-center">
+                        <h1 class="h2">Status Page Grafana - MessMass</h1>
+                      </div>
 
-                        <h3 class="template-title-example">Illustrations des versions</h3>
-                        <p>
-                            Afin de mieux visualiser l'évolution de la status page au cours des itérations, voici
-                            quelques captures d'écran représentatives des différentes versions du tableau de bord. Elles
-                            mettent en évidence la montée en complexité et la recherche d'une interface claire pour
-                            suivre l'état des services.
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-3">
-                                <img src="./assets/images/StatusPagePOC.png" class="img-responsive" alt="Status Page version PoC">
-                                <p class="text-center"><strong>Version PoC</strong><br>
-                                    Première preuve de concept se limitant à la vérification de la disponibilité via le
-                                    Blackbox Exporter. Les statuts sont binaires (up/down) et l'interface très épurée.</p>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <img src="./assets/images/StatusPageFirst.png" class="img-responsive" alt="Status Page première version">
-                                <p class="text-center"><strong>Première version</strong><br>
-                                    Introduction de cartes dynamiques pour chaque environnement (Prod, Dev, Indus).
-                                    Les statuts sont toujours simplifiés, mais la disposition et le langage visuel se
-                                    précisent.</p>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <img src="./assets/images/StatusPageTest.png" class="img-responsive" alt="Status Page version de test">
-                                <p class="text-center"><strong>Version tests</strong><br>
-                                    Expérimentation avec des seuils et codes couleur. Les sections sont
-                                    réorganisées et de nouveaux indicateurs apparaissent (nombre de nœuds en erreur,
-                                    etc.).</p>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <img src="./assets/images/StatusPageFinal.png" class="img-responsive" alt="Status Page version finale">
-                                <p class="text-center"><strong>Version finale</strong><br>
-                                    Version validée par la squad, présentant les statuts, l'historique des incidents,
-                                    les indicateurs SLI/SLO et un bandeau d'informations pour chaque domaine
-                                    fonctionnel.</p>
-                            </div>
+                      <p>
+                        Ce projet a été réalisé durant mon stage de fin d'études au sein de l'équipe
+                        <strong>MessMass</strong> de Michelin. La problématique était simple à formuler, mais
+                        compliquée à vivre au quotidien&nbsp;: les autres équipes IT manquaient de visibilité
+                        sur l'état réel des middleware, et ouvraient souvent des tickets sans savoir si
+                        le problème venait de leurs applications… ou de chez nous.
+                      </p>
+                      <p>
+                        J’ai donc conçu et développé une <em>status page</em> Grafana permettant de surveiller
+                        en temps réel les middleware critiques, de visualiser leur historique d’incidents
+                        et de donner aux équipes consommatrices une réponse immédiate à la question&nbsp;:
+                        <strong>«&nbsp;Est-ce que le problème vient de l’infrastructure MessMass ou de mon périmètre&nbsp;?&nbsp;»</strong>
+                      </p>
+
+                      <h3 class="template-title-example">Contexte et objectifs</h3>
+                      <p>
+                        Dans le cadre du programme <em>OneSystem IT Platforms</em>, l’équipe MessMass devait améliorer
+                        l’observabilité de ses middleware (EDA, MFT, EAI, IFE/M2I, ETL) et réduire le nombre de
+                        tickets «&nbsp;pour rien&nbsp;». La status page devait&nbsp;:
+                      </p>
+                      <ul>
+                        <li>offrir une vision synthétique et fiable de l’état des services pour les autres équipes IT&nbsp;;</li>
+                        <li>permettre d’identifier rapidement si un incident vient d’un middleware ou d’un consommateur&nbsp;;</li>
+                        <li>regrouper au même endroit statut, historique d’incidents et indicateurs de qualité de service&nbsp;;</li>
+                        <li>s’intégrer naturellement dans l’écosystème existant (Grafana, Prometheus, ServiceNow).</li>
+                      </ul>
+
+                      <h3 class="template-title-example">Mon rôle</h3>
+                      <p>
+                        Grafana venait tout juste d’être introduit chez Michelin au moment de mon arrivée. J’ai dû
+                        apprendre à maîtriser l’outil de manière autonome et construire, itération après itération,
+                        une status page complète et maintenable qui serve de <strong>référence</strong> pour les futurs travaux
+                        Grafana au sein de l’entreprise.
+                      </p>
+                      <ul>
+                        <li>Conception de la structure globale de la page (domaines, services, indicateurs, navigation).</li>
+                        <li>Configuration des métriques dans <strong>Prometheus</strong> et intégration de plusieurs <em>exporters</em> (Blackbox, OpenTelemetry, scripts custom).</li>
+                        <li>Création des panneaux Grafana (Canvas, tableaux, cartes, indicateurs) et des requêtes <strong>PromQL</strong>.</li>
+                        <li>Intégration de données d’une autre équipe (API) avec un alternant, pour enrichir la vue globale.</li>
+                        <li>Rédaction de la documentation utilisateur/technique et d’un guide de standardisation graphique.</li>
+                      </ul>
+
+                      <h3 class="template-title-example">Fonctionnalités clés</h3>
+                      <ul>
+                        <li>Monitoring en temps réel d’une quinzaine de middleware internes et externes via
+                          <strong>Prometheus</strong> et différents <em>exporters</em> (Blackbox, OpenTelemetry, scripts Python).</li>
+                        <li>Indicateurs visuels normalisés (OK/KO/Maintenance, couleurs, icônes) pour une lecture rapide.</li>
+                        <li>Historique des incidents avec liens directs vers les tickets ServiceNow et les pages de suivi SharePoint.</li>
+                        <li>Affichage des SLI et du <em>burn rate</em> des SLO pour comparer la performance aux objectifs.</li>
+                        <li>Fonction <em>drill-down</em> affichant la liste détaillée des composants et nœuds d’un middleware.</li>
+                        <li>Organisation par domaines fonctionnels (EDA, MFT, EAI, IFE/M2I, ETL) pour refléter la réalité métier.</li>
+                        <li>Intégration d’une API interne pour agréger des informations issues d’autres squads.</li>
+                      </ul>
+
+                      <h3 class="template-title-example">Architecture et mise en œuvre</h3>
+                      <p>
+                        La status page s'appuie sur une architecture d'observabilité unifiée&nbsp;:
+                      </p>
+                      <ul>
+                        <li><strong>Prometheus</strong> collecte les métriques (disponibilité, erreurs, files d’attente, temps de réponse) via Blackbox Exporter, collecteurs OpenTelemetry, scripts <strong>Python</strong> et tests <strong>K6</strong>.</li>
+                        <li>Un service REST expose des données consolidées au format JSON pour certains périmètres.</li>
+                        <li><strong>Grafana</strong> interroge ces sources et les présente dans des panneaux personnalisés
+                          (Canvas, tableaux, cartes, vues combinées).</li>
+                      </ul>
+                      <p>
+                        Au fil des versions, l’interface est passée d’une simple vue binaire (up/down) à un tableau de bord
+                        structuré par domaines, combinant statut actuel, historique d’incidents et indicateurs de service
+                        dans une vue unique pensée pour les équipes utilisatrices.
+                      </p>
+
+                      <h3 class="template-title-example">Évolution et impact</h3>
+                      <p>
+                        Le développement s’est déroulé en plusieurs itérations&nbsp;: PoC basé sur Blackbox, ajout de statuts
+                        détaillés, structuration par domaines et enrichissement par les données des autres équipes. La
+                        version finale, validée par la squad HIP, est devenue un <strong>modèle de status page</strong> pour les futurs
+                        usages de Grafana chez Michelin.
+                      </p>
+                      <p>
+                        Même si mon stage s’est terminé au moment de la mise en production, l’objectif est clair&nbsp;:
+                        <strong>réduire les tickets «&nbsp;inutiles&nbsp;»</strong>, améliorer la compréhension de l’état des middleware par les équipes
+                        consommatrices et faciliter les diagnostics en centralisant l’information utile au même endroit.
+                      </p>
+
+                      <h3 class="template-title-example">Illustrations des versions</h3>
+                      <p>
+                        Afin de mieux visualiser l'évolution de la status page au cours des itérations, voici
+                        quelques captures d'écran représentatives des différentes versions du tableau de bord.
+                      </p>
+                      <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                          <img src="./assets/images/StatusPagePOC.png" class="img-responsive" alt="Status Page version PoC">
+                          <p class="text-center"><strong>Version PoC</strong><br>
+                            Première preuve de concept se limitant à la vérification de la disponibilité via le
+                            Blackbox Exporter. Les statuts sont binaires (up/down) et l'interface très épurée.</p>
                         </div>
-                        <h3 class="template-title-example">Limitations et perspectives</h3>
-                        <ul>
-                            <li><strong>Accès restreint :</strong> la status page est actuellement réservée aux
-                                utilisateurs disposant d'un compte Grafana. Une évolution envisagée est la
-                                publication d'une version publique avec authentification légère, voire une
-                                exportation vers un site statique accessible à tous les collaborateurs.</li>
-                            <li><strong>Homogénéisation des statuts :</strong> chaque middleware a ses propres règles
-                                d'erreur et de seuils. L'uniformisation des indicateurs et des codes couleur
-                                reste un chantier pour garantir une lecture cohérente.</li>
-                            <li><strong>Automatisation des tests et du déploiement :</strong> les scripts K6 et
-                                l'intégration continue peuvent être améliorés pour industrialiser la mise à
-                                jour de la page et la validation des nouveaux services.</li>
-                            <li><strong>Extension du périmètre :</strong> la méthodologie et la charte graphique
-                                pourraient être appliquées à d'autres squads DOTI ou à des services externes
-                                (database, réseau) en adaptant les collecteurs et les indicateurs.</li>
-                        </ul>
-                        <h3 class="template-title-example">Notions utilisées</h3>
-                        <ul>
-                            <li><span class="fa-icon"><i class="fa fa-dashboard"></i></span>Grafana pour la
-                                visualisation et l'agencement des panneaux.</li>
-                            <li><span class="fa-icon"><i class="fa fa-database"></i></span>Prometheus et ses
-                                <em>exporters</em> (Blackbox, OpenTelemetry) pour la collecte et l'exposition des
-                                métriques.</li>
-                            <li><span class="fa-icon"><i class="fa fa-rocket"></i></span>K6 pour les tests de charge
-                                et l'évaluation des temps de réponse des APIs.</li>
-                            <li><span class="fa-icon"><i class="fa fa-cubes"></i></span>Canvas panel, table panel et
-                                autres plugins Grafana pour la construction de cartes interactives.</li>
-                            <li><span class="fa-icon"><i class="fa fa-code"></i></span>Python, Shell et API REST
-                                pour l'agrégation, la transformation et l'exposition des données.</li>
-                            <li><span class="fa-icon"><i class="fa fa-book"></i></span>Rédaction de documentation
-                                utilisateur et technique, création d'un guide de charte graphique pour
-                                standardiser la page.</li>
-                        </ul>
-                        <h3 class="template-title-example">Liens externes</h3>
-                        <ul>
-                            <li>
-                                <a href="https://grafana.com/" target="blank_">
-                                    <span class="fa-icon"><i class="fa fa-external-link"></i></span>Grafana - site officiel
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://prometheus.io/" target="blank_">
-                                    <span class="fa-icon"><i class="fa fa-external-link"></i></span>Prometheus - site officiel
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://k6.io/" target="blank_">
-                                    <span class="fa-icon"><i class="fa fa-external-link"></i></span>K6 - tests de charge
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./assets/pdf/Rapport_Michelin.pdf" target="blank_">
-                                    <span class="fa-icon"><i class="fa fa-file-pdf-o"></i></span>Rapport de stage complet (PDF)
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="col-sm-6 col-md-3">
+                          <img src="./assets/images/StatusPageFirst.png" class="img-responsive" alt="Status Page première version">
+                          <p class="text-center"><strong>Première version</strong><br>
+                            Introduction de cartes dynamiques pour chaque environnement (Prod, Dev, Indus).
+                            La structure visuelle commence à refléter les usages des équipes.</p>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                          <img src="./assets/images/StatusPageTest.png" class="img-responsive" alt="Status Page version de test">
+                          <p class="text-center"><strong>Version tests</strong><br>
+                            Expérimentations sur les seuils, les codes couleur et l’organisation des blocs pour
+                            trouver le bon compromis entre richesse d’information et lisibilité.</p>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                          <img src="./assets/images/StatusPageFinal.png" class="img-responsive" alt="Status Page version finale">
+                          <p class="text-center"><strong>Version finale</strong><br>
+                            Version validée par la squad, présentant les statuts, l'historique des incidents,
+                            les indicateurs SLI/SLO et un bandeau d'informations pour chaque domaine
+                            fonctionnel.</p>
+                        </div>
+                      </div>
+
+                      <h3 class="template-title-example">Notions utilisées</h3>
+                      <ul>
+                        <li><span class="fa-icon"><i class="fa fa-dashboard"></i></span>Grafana pour la
+                            visualisation et l'agencement des panneaux (Canvas, tableaux, cartes).</li>
+                        <li><span class="fa-icon"><i class="fa fa-database"></i></span>Prometheus et ses
+                            <em>exporters</em> (Blackbox, OpenTelemetry) pour la collecte et l'exposition des
+                            métriques.</li>
+                        <li><span class="fa-icon"><i class="fa fa-rocket"></i></span>K6 pour les tests de charge
+                            et l'évaluation des temps de réponse des APIs.</li>
+                        <li><span class="fa-icon"><i class="fa fa-code"></i></span>Python, Shell et API REST
+                            pour l'agrégation, la transformation et l'exposition des données.</li>
+                        <li><span class="fa-icon"><i class="fa fa-book"></i></span>Rédaction de documentation
+                            utilisateur et technique, création d'un guide de charte graphique.</li>
+                      </ul>
+
+                      <h3 class="template-title-example">Liens externes</h3>
+                      <ul>
+                        <li>
+                          <a href="https://grafana.com/" target="blank_">
+                            <span class="fa-icon"><i class="fa fa-external-link"></i></span>Grafana - site officiel
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://prometheus.io/" target="blank_">
+                            <span class="fa-icon"><i class="fa fa-external-link"></i></span>Prometheus - site officiel
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://k6.io/" target="blank_">
+                            <span class="fa-icon"><i class="fa fa-external-link"></i></span>K6 - tests de charge
+                          </a>
+                        </li>
+                        <li>
+                          <a href="./assets/pdf/Rapport_Michelin.pdf" target="blank_">
+                            <span class="fa-icon"><i class="fa fa-file-pdf-o"></i></span>Rapport de stage complet (PDF)
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                 </div>
             </div>
@@ -241,7 +225,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Mis à jour le 21/08/2025</p>
+                    <p>Mis à jour le 08/12/2025</p>
                 </div>
             </div>
         </div>

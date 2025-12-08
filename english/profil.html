@@ -27,16 +27,16 @@
         <nav class="navbar  navbar-fixed-top navbar-default">
             <div class="language-button">
                 <a href="../profil.html">
-                  <img src="../assets/images/UK.png" alt="Language Flag">
+                    <img src="../assets/images/UK.png" alt="Language Flag">
                 </a>
             </div>
             <div class="container">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav ">
@@ -63,34 +63,42 @@
                             <h3>Presentation</h3>
                             <p id="presentation"></p>
                             <p>
-                                As a 2025 ISIMA graduate, I'm eager to contribute to a software development team in the Auvergne-Rhône-Alpes region. I love collaborative environments and projects where technical challenges drive tangible impact.
+                                Today, I design software solutions, automation tools and applied AI prototypes for companies – especially accounting firms and SMEs. My goal is straightforward: turn real-world constraints into concrete tools that save time, reduce mental load, and fit naturally into existing workflows.
                             </p>
+                            <p>
+                                I enjoy working close to the field: talking with the people who actually use the tools, understanding their habits, pain points, and time pressure. This proximity shapes my technical choices and my way of building software: clear, robust, and genuinely helpful from day one.
+                            </p>
+
                             <h3>Background</h3>
                             <p>
-                                My first encounter with computer programming was during middle school when I started using <a href="https://scratch.mit.edu" target="_blank" style="font-style: italic;">Scratch</a> (<a href="https://scratch.mit.edu/users/xerneas02/" target="_blank" style="font-style: italic;">My profile</a>), which introduced me to the basics of programming and writing my first algorithms. Later on, I continued exploring programming with my first codes in Python.
+                                My first contact with programming was in middle school with <a href="https://scratch.mit.edu" target="_blank" style="font-style: italic;">Scratch</a> (<a href="https://scratch.mit.edu/users/xerneas02/" target="_blank" style="font-style: italic;">My profile</a>), where I discovered the basics of coding and wrote my first algorithms. Later on, I continued exploring programming with my first scripts in Python.
                             </p>
                             <p>
-                                I truly began my programming journey in high school, initially on my own, and then through the specialization in <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="_blank" style="font-style: italic;">Computer Science and Digital Technologies (CSDT)</a>, where I worked on my first projects.
+                                In high school, I really got into development, first on my own and then through the <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="_blank" style="font-style: italic;">Computer Science and Digital Technologies (CSDT)</a> specialization, where I completed my first concrete projects.
                             </p>
                             <p>
-                                After completing my high school education with a specialization in <a href="https://fr.wikipedia.org/wiki/Informatique_et_sciences_du_num%C3%A9rique" target="_blank" style="font-style: italic;">CSDT</a>, I continued my academic journey by enrolling in the integrated preparatory school, Prep'ISIMA. After validating the two-year curriculum, I joined <a href="https://www.isima.fr" target="_blank" style="font-style: italic;">ISIMA</a>, from which I have now graduated.
+                                After graduating from high school with the CSDT specialization, I joined the integrated preparatory program Prep'ISIMA and then the engineering school <a href="https://www.isima.fr" target="_blank" style="font-style: italic;">ISIMA</a>, from which I graduated. This curriculum gave me a solid foundation in software engineering, industrial computing, and AI.
                             </p>
+
                             <h3>Technical Skills</h3>
                             <p>
-                                My go-to languages are C/C++ and Python. I'm also comfortable building applications with C#, Rust, Java, GDScript, and other technologies that fit the project's needs.
+                                My main programming languages are C/C++ and Python, which I use for systems development, automation tools, and AI-related projects. I'm also comfortable building applications with C#, Rust, Java, GDScript, and other technologies depending on the project's needs.
                             </p>
-                            <h3>Internship Experience</h3>
+                            <p>
+                                Beyond languages, I have a strong interest in observability, software quality, and bringing reliable tools into production: instrumentation, dashboards, monitoring, testing, documentation, and user feedback loops.
+                            </p>
+
+                            <h3>Professional Experience</h3>
                             <ul>
                                 <li>
-                                    Final-year internship at Michelin with the MessMass squad, where I designed a <a href="./statusPage.html">Grafana status page</a> to monitor critical middleware in real time.
+                                    <strong>Michelin (MessMass squad)</strong><br>
+                                    Designed and implemented a <a href="./statusPage.html">Grafana status page</a> to monitor critical middleware. The project leveraged Grafana, Prometheus and OpenTelemetry to provide a clear, real-time view of service health and to support operations teams in their daily work.
                                 </li>
                                 <li>
-                                    Internship at the Arctic University of Norway (UiT), focused on building a <a href="./chatBot.html">chatbot for the Industrial Engineering master's program</a>.
+                                    <strong>Arctic University of Norway (UiT)</strong><br>
+                                    Developed a <a href="./chatBot.html">chatbot for the Industrial Engineering master's program</a>, aimed at helping students quickly find relevant information through a contextual search engine and a conversational interface.
                                 </li>
                             </ul>
-                            <a href="../assets/pdf/CVEnglish.pdf">
-                                <h3 style="color: blue;">My resume</h3>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -103,9 +111,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Last updated on 02/10/2025</p>
+                    <p>Last updated on 08/12/2025</p>
                 </div>
-            </div>
+            </div>  
         </div>
     </footer>
 
@@ -113,12 +121,21 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             navActivePage();
         });
+
         var dob = new Date("07/17/2002");
         var month_diff = Date.now() - dob.getTime();
         var age_dt = new Date(month_diff);
         var age = Math.abs(age_dt.getUTCFullYear() - 1970);
 
-    document.getElementById("presentation").innerHTML = `My name is Mathis Roubille, I am ${age} years old, I'm an ISIMA graduate, and I'm looking for a software development role in Auvergne-Rhône-Alpes.`
+        document.getElementById("presentation").innerHTML = `
+            My name is Mathis Roubille, I am ${age} years old, and I like to understand how things work… then find ways to make them simpler.<br><br>
+            I first discovered programming in middle school with Scratch, creating small systems that came to life through colorful blocks. 
+            Over time, that curiosity turned into a way of working: experimenting, learning, building, and improving.<br><br>
+            My journey led me to ISIMA, and then out into the field: in Norway, in a research environment, and at Michelin, working closely with the teams who rely on the tools we build every day. 
+            These experiences taught me to listen carefully to real user needs, to understand operational constraints, and to design solutions that are robust, useful, and easy to adopt.<br><br>
+            Today, whether I'm working on software development, automation, or applied AI, I keep the same guiding principle: 
+            creating tools that deliver concrete, measurable, and lasting impact for the teams that use them.
+        `;
     </script>
     <script type="text/javascript" src="../js/main.js"></script>
 </body>
